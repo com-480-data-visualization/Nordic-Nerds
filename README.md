@@ -2,9 +2,9 @@
 
 | Student's name | SCIPER |
 | -------------- | ------ |
-| | |
-| | |
-| | |
+| Halvor Linder Henriksen | 379433 |
+| Nils Holger Anders Johansson | 376469 |
+| Arran Øystein Kostveit Gabriel | 375923 |
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
