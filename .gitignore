@@ -92,3 +92,4 @@ Thumbs.db
 
 /datasets/*
 !/datasets/.gitkeep
+/env
