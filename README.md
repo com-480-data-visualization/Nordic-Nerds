@@ -70,8 +70,44 @@ intuitive and rich visualizations will be paramount in achieving this goal.
 
 ### Exploratory Data Analysis
 
-> Pre-processing of the data set you chose
-> - Show some basic statistics and get insights about the data
+We have examined the two datasets we intend to use as our main data for the project, *Football Events* and *Football
+transfers dataset*.
+
+#### *Football Events*
+
+Our concerns about the data from the first inspection was correct. The last year for the collected data, 2017, is not
+complete but that was already known and we have discussed before how this is not a problem for the project.
+Another potential problem is that the positional data of the events is not precise. However, we believe we can handle
+that by
+manually mapping the different positions to some places on the pitch like discussed above. We also encountered
+another fault in the positional data that we did not know about before, namely that only about one third of the events
+have
+positional data. Luckily most moments of play such as goals have a location and we believe that it is enough for us to
+be able to complete the project.
+
+Some interesting facts found is that most goals are scored in the bottom corners of the goal but most attempts are made
+in the centre.
+
+#### *Football transfers dataset*
+
+The dataset contains rows for every player transfer, loan, and retirement in both directions. Meaning that there are
+rows
+for both the "receiving" and "giving" clubs. It is hard to test the completeness of the dataset but since we are only
+interested in a few players it can easily be tested manually. Some false data discovered is that there are at least 13
+transfers in Serie A with reported transfer fee amounts that are too high. The largest transfer knows is when Neymar
+transferred from FC Barcelona to Paris SG for 220 million Euro but some of the transfers in Serie A have up to 550
+million Euro transfer fee amounts reported.
+
+Some interesting facts and statistics from the data when retirements and end of loans are excluded:
+
+- Average transfers (including loans) per season is 1785,62 for the seasons 2009 - 2021.
+- The club acquiring most players (excluding loans and retirements) is Genoa CFC acquiring a total of 271 players
+  between 2009 - 2021. The average amount of acquiring (excluding loans) per club and season is 5,72.
+- The player with most transfers (including loans) is Gaël Kakuta from France who did 13 transfers between 2009 - 2021.
+  The last transfer was not between clubs but going from a loan to a contract within RC Lens. The average amount of
+  transfers (including loans) per player and season is 0,14.
+- The player with most transfers (excluding loans) is Kevin-Prince Boateng who did 10 transfers between 2009 - 2021. The
+  average amount of transfers (excluding loans) per player and season is 0,12.
 
 ### Related work
 
