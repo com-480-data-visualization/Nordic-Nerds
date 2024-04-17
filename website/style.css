@@ -1,0 +1,35 @@
+:root {
+    --bg: #328F5B;
+    --bg-dark: #61423F;
+    --bg-light: white;
+    --accent: #E03022;
+    --accent-variant: #A14840;
+}
+
+#transfers-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-portrait {
+    margin: 0px 10px;
+    width: 120px;
+    border-radius: 50% 20%;
+    background-color: #328F5B;
+    opacity: 0.7;
+}
+
+.player-portrait:hover {
+    opacity: 1;
+}
+
+.selected {
+    opacity: 1;
+}
+
+#map {
+    /*margin: 0px 50px;*/
+}
