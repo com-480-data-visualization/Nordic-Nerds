@@ -2,27 +2,31 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import * as utils from "./utils.js";
 import * as data from "./data.js";
 
-const players = ["zlatan", "messi", "ronaldo", "haaland"];
+let playerData = [];
 let selectedPlayer = null;
 
-const teams = [];
+let mapData = [];
+let clubData = [];
+
 let selectedTeam = null;
+
+const MAP_BADGE_WIDTH = 40;
 
 const setSelectedPlayer = (player) => {
   selectedPlayer = selectedPlayer != player ? player : null;
   redraw();
 };
 
-const drawMap = (mapData) => {
+const drawMap = (mapData, clubData) => {
   let svg = d3.select("#map");
-  const size = Math.min(window.innerWidth, window.innerHeight) - 50;
-  svg.attr("width", size);
-  svg.attr("height", size);
+  const size = svg.node().getBoundingClientRect().width;
 
   const projection = d3
     .geoMercator()
-    .center([8.666764481935557, 58.1008393986825])
-    .scale(size);
+    .center([6.566957, 43.518059])
+    .translate([size / 2, size / 2])
+    .scale(size / 1.2);
+
   // Draw the map
   svg
     .select("#countries")
@@ -34,39 +38,44 @@ const drawMap = (mapData) => {
       getComputedStyle(document.documentElement).getPropertyValue("--bg")
     )
     .attr("d", d3.geoPath().projection(projection));
-
+  // Draw the clubs
   svg
     .select("#clubs")
     .selectAll("image")
-    .data(data.getClubData())
+    .data(clubData)
     .join("image")
-    .attr("xlink:href", (d) => d.img)
-    .attr("x", (d) => projection([d.long, d.lat])[0])
-    .attr("y", (d) => projection([d.long, d.lat])[1])
-    .attr("width", 20)
-    .attr("height", 24);
+    .attr("href", (d) => d.image.src)
+    .attr("x", (d) => projection([d.long, d.lat])[0] - MAP_BADGE_WIDTH / 2)
+    .attr("y", (d) => projection([d.long, d.lat])[1] - MAP_BADGE_WIDTH / 2)
+    .attr("width", (d) =>
+      d.image.width >= d.image.height ? MAP_BADGE_WIDTH : null
+    )
+    .attr("height", (d) =>
+      d.image.width < d.image.height ? MAP_BADGE_WIDTH : null
+    );
 };
 
-const drawPlayers = () => {
+const drawPlayers = (players) => {
   d3.select("#players-container")
     .selectAll("img")
     .data(players)
     .join("img")
-    .attr("src", (player) => `images/${player}.png`)
+    .attr("src", (player) => player.portrait_src)
     .classed("player-portrait", true)
     .classed("selected", (player) => player == selectedPlayer)
     .on("click", (_, d) => setSelectedPlayer(d));
 };
 
 const redraw = () => {
-  drawPlayers();
-
-  d3.json(
-    "https://raw.githubusercontent.com/leakyMirror/map-of-europe/master/GeoJSON/europe.geojson"
-  ).then((d) => drawMap(d.features));
+  drawPlayers(playerData);
+  drawMap(mapData, clubData);
 };
 
-redraw();
+window.onload = async () => {
+  mapData = await data.getMapData();
+  playerData = await data.getPlayerData();
+  clubData = await data.getClubData();
 
-window.onload = redraw;
+  redraw();
+};
 window.onresize = redraw;

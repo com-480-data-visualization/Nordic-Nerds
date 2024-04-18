@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Manchester United",
+    "lat": 53.50774849971393,
+    "long": -2.2450845100238173,
+    "image": {
+      "src": "images/clubs/manchester_united.svg",
+      "width": 300,
+      "height": 300
+    }
+  },
+  {
+    "name": "AC Milan",
+    "lat": 45.46444387988272,
+    "long": 9.171718640543641,
+    "image": {
+      "src": "images/clubs/ac_milan.svg",
+      "width": 361,
+      "height": 566
+    }
+  },
+  {
+    "name": "Real Madrid",
+    "lat": 40.40652957064298,
+    "long": -3.7020457655245176,
+    "image": {
+      "src": "images/clubs/real_madrid.svg",
+      "width": 142.95,
+      "height": 199.53999
+    }
+  },
+  {
+    "name": "Molde",
+    "lat": 62.73786840999907,
+    "long": 7.179991264791874,
+    "image": {
+      "src": "images/clubs/molde.svg",
+      "width": 300,
+      "height": 160
+    }
+  }
+]
