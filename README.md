@@ -8,7 +8,9 @@
 
 [Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
 
-## Milestone 1 (29th March, 5pm)
+## Milestone 1
+
+_(29th March, 5pm)_
 
 ### Dataset
 
@@ -146,7 +148,9 @@ and entertaining to view and very specific, deep diving visualizations like the 
 
 None of the team's participants have used the data before in any class or have some prior experiences with it.
 
-## Milestone 2 (26th April, 5pm)
+## Milestone 2
+
+_(26th April, 5pm)_
 
 ### Sketches of initial visualization ideas
 
@@ -172,8 +176,8 @@ TODO: Explain the idea
 
 A rough first version of our visualization can be found at the following [link](https://com-480-data-visualization.github.io/Nordic-Nerds/).
 
-**10% of the final grade**
+## Milestone 3
 
-## Milestone 3 (31st May, 5pm)
+_(31st May, 5pm)_
 
 **80% of the final grade**
