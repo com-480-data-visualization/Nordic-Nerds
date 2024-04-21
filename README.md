@@ -168,6 +168,9 @@ TODO: Explain the idea
 
 TODO: Explain the idea
 
+### MVP website
+
+A rough first version of our visualization can be found at the following [link](https://com-480-data-visualization.github.io/Nordic-Nerds/).
 
 **10% of the final grade**
 
