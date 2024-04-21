@@ -1,7 +1,7 @@
 # Project of Data Visualization (COM-480)
 
 | Student's name                 | SCIPER |
-|--------------------------------|--------|
+| ------------------------------ | ------ |
 | Halvor Linder Henriksen        | 379433 |
 | Nils Holger Anders Johansson   | 376469 |
 | Arran Øystein Kostveit Gabriel | 375923 |
@@ -13,17 +13,17 @@
 ### Dataset
 
 We will mainly use one dataset from kaggle.com and one dataset published on github.com. The dataset from kaggle.com is
-*Football Events* (published by Alin Secareanu [@secareanualin](https://www.kaggle.com/secareanualin), downloaded
+_Football Events_ (published by Alin Secareanu [@secareanualin](https://www.kaggle.com/secareanualin), downloaded
 2024-03-12, [kaggle.com](https://www.kaggle.com/datasets/secareanualin/football-events?select=events.csv)) and the other
-is *Football
-transfers dataset* that is scraped from the web and published on github.com (published by Dmitrii
+is _Football
+transfers dataset_ that is scraped from the web and published on github.com (published by Dmitrii
 Antipov [@d2ski](https://github.com/d2ski),
 downloaded 2024-03-12, [github.com](https://github.com/d2ski/football-transfers-data)). In this project we only intend
 to visualize
 the events and transfers for a handful of players which we choose based on interest. This allows us to choose players
 with sufficient and high quality data which reduces the amount of data processing required.
 
-The *Football Events* dataset is generally of high quality data. The data consists of over 900000 events that have
+The _Football Events_ dataset is generally of high quality data. The data consists of over 900000 events that have
 occurred during football games from 2011/2012 season to 2017-01-27. Each event is tagged with the player that triggered
 the event together with a description of what happened. For example if a foul is committed or a goal is scored. The
 processing required is to project where the event happened on the pitch to a map of a football pitch. The
@@ -31,7 +31,7 @@ description of where the event happened is categorized into 19 different locatio
 Half’. The location descriptions are not very precise so we need to decide where to place it on the map but since the
 project is about visualization the correctness of the placements are not important.
 
-The *Football transfers dataset* is also well ordered and of high quality. The dataset contains all transfers for the
+The _Football transfers dataset_ is also well ordered and of high quality. The dataset contains all transfers for the
 seven largest European leagues between 2009 - 2021. To connect the two datasets we need to use player names but this
 will again be easy since we only will use a few players and possible duplicates can be removed manually. The two
 datasets are not covering the exact same years but since we will not compare data between the sets that is also not a
@@ -55,6 +55,7 @@ the story goes beyond destinations. We'll delve into player performance data to 
 their play developed across different teams, and highlight instances where players crossed paths.
 
 The project seeks to answer these questions:
+
 <ol>
 <li>
 Player Career Visualization: How can we effectively visualize the career trajectories of top football players,
@@ -70,10 +71,10 @@ intuitive and rich visualizations will be paramount in achieving this goal.
 
 ### Exploratory Data Analysis
 
-We have examined the two datasets we intend to use as our main data for the project, *Football Events* and *Football
-transfers dataset*.
+We have examined the two datasets we intend to use as our main data for the project, _Football Events_ and _Football
+transfers dataset_.
 
-#### *Football Events*
+#### _Football Events_
 
 Our concerns about the data from the first inspection was correct. The last year for the collected data, 2017, is not
 complete but that was already known and we have discussed before how this is not a problem for the project.
@@ -88,7 +89,7 @@ be able to complete the project.
 Some interesting facts found is that most goals are scored in the bottom corners of the goal but most attempts are made
 in the centre.
 
-#### *Football transfers dataset*
+#### _Football transfers dataset_
 
 The dataset contains rows for every player transfer, loan, and retirement in both directions. Meaning that there are
 rows
@@ -112,23 +113,27 @@ Some interesting facts and statistics from the data when retirements and end of 
 ### Related work
 
 There are several projects done on this topic, for example:
+
 <ul>
 <li>
 
-[*The Beautiful Game - Analysis of Football
-Events*](https://www.kaggle.com/code/ahmedyoussef/the-beautiful-game-analysis-of-football-events/report) which presents
+[_The Beautiful Game - Analysis of Football
+Events_](https://www.kaggle.com/code/ahmedyoussef/the-beautiful-game-analysis-of-football-events/report) which presents
 interesting charts of the Football Events dataset.
+
 </li>
 <li>
 
-[*Football transfer infographic*](https://www.slow-journalism.com/infographics/sport/through-the-transfer-window-2)
+[_Football transfer infographic_](https://www.slow-journalism.com/infographics/sport/through-the-transfer-window-2)
 which maps the rumored and actual transfers for a year in Premier League.
+
 </li>
 <li>
 
-[*INFOGRAPHIC: From Gareth Bale to Luis Suarez, the most expensive signings in
-football*](https://www.scmp.com/infographics/article/1855915/infographic-gareth-bale-luis-suarez-most-expensive-signings-football)
+[_INFOGRAPHIC: From Gareth Bale to Luis Suarez, the most expensive signings in
+football_](https://www.scmp.com/infographics/article/1855915/infographic-gareth-bale-luis-suarez-most-expensive-signings-football)
 which dives into the largest transfers.
+
 </li>
 </ul>
 In our project we want to present the same data as above but from another perspective. We want to showcase the career of
@@ -143,11 +148,29 @@ None of the team's participants have used the data before in any class or have s
 
 ## Milestone 2 (26th April, 5pm)
 
+### Sketches of initial visualization ideas
+
+#### 1: Player / Club - map
+
+![Map sketch](sketches/map_sketch.png)
+
+TODO: Explain the idea
+
+#### 2: Club match event heatmap
+
+![Field sketch](sketches/events_sketch.png)
+
+TODO: Explain the idea
+
+#### 3: Club timeline
+
+![Club data sketch](sketches/club_progress_sketch.png)
+
+TODO: Explain the idea
+
+
 **10% of the final grade**
 
 ## Milestone 3 (31st May, 5pm)
 
 **80% of the final grade**
-
-
-
