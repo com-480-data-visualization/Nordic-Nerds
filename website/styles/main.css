@@ -10,10 +10,17 @@ body {
   font-family: sans-serif;
 }
 
+#title {
+  background-color: var(--bg);
+  color: var(--bg-light);
+  text-align: center;
+}
+
 #intro {
   width: 70%;
   margin: 0 auto;
   text-align: center;
+  font-style: italic;
 }
 
 .section-container {
@@ -24,6 +31,10 @@ body {
   justify-content: center;
   align-items: center;
   padding-bottom: 2em;
+}
+
+.inactive {
+  opacity: 0.3;
 }
 
 /* Left align the section header */

@@ -4,6 +4,7 @@ import { drawPlayers } from "./components/players.js";
 import { setupYearSlider } from "./components/year-slider.js";
 
 let playerData = [];
+let transferData = [];
 let mapData = [];
 let clubData = [];
 
@@ -55,12 +56,15 @@ window.onload = async () => {
   // Get data
   mapData = await data.getMapData();
   playerData = await data.getPlayerData();
+  transferData = Promise.all(
+    playerData.map((player) => data.getTransferData(player.name))
+  );
   clubData = await data.getClubData();
 
   // Setup components
-  setupYearSlider(2009, 2021, (year) => {
-    console.log(`${year} selected`);
-  });
+  setupYearSlider(2009, 2021, 2009, 2021, (year) =>
+    console.log(`${year} selected`)
+  );
 
   // Draw
   window.onresize = redraw;
