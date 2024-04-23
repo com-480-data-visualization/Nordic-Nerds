@@ -1,0 +1,33 @@
+{
+  "data": [
+    {
+      "club_name": "Borussia Dortmund",
+      "player_name": "Erling Haaland",
+      "age": 19.0,
+      "position": "Centre-Forward",
+      "club_involved_name": "RB Salzburg",
+      "fee": "\u20ac20.00m",
+      "transfer_movement": "in",
+      "transfer_period": "Winter",
+      "fee_cleaned": 20.0,
+      "league_name": "1 Bundesliga",
+      "year": 2019,
+      "season": "2019/2020"
+    },
+    {
+      "club_name": "Manchester City",
+      "player_name": "Erling Haaland",
+      "age": 21.0,
+      "position": "Centre-Forward",
+      "club_involved_name": "Bor. Dortmund",
+      "fee": "\u20ac60.00m",
+      "transfer_movement": "in",
+      "transfer_period": "summer",
+      "fee_cleaned": 60.0,
+      "league_name": "Premier League",
+      "year": 2022,
+      "season": "2022/2023"
+    }
+  ],
+  "metadata": { "start": 2019, "end": 2023 }
+}

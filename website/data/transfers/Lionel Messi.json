@@ -1,0 +1,33 @@
+{
+  "data": [
+    {
+      "club_name": "FC Barcelona",
+      "player_name": "Lionel Messi",
+      "age": 18.0,
+      "position": "Right Winger",
+      "club_involved_name": "Barcelona B",
+      "fee": "-",
+      "transfer_movement": "in",
+      "transfer_period": "Summer",
+      "fee_cleaned": 0.0,
+      "league_name": "Primera Division",
+      "year": 2005,
+      "season": "2005/2006"
+    },
+    {
+      "club_name": "Paris Saint-Germain",
+      "player_name": "Lionel Messi",
+      "age": 34.0,
+      "position": "Right Winger",
+      "club_involved_name": "Barcelona",
+      "fee": "free transfer",
+      "transfer_movement": "in",
+      "transfer_period": "Summer",
+      "fee_cleaned": 0.0,
+      "league_name": "Ligue 1",
+      "year": 2021,
+      "season": "2021/2022"
+    }
+  ],
+  "metadata": { "start": 2005, "end": 2023 }
+}
