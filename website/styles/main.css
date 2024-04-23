@@ -1,0 +1,32 @@
+:root {
+  --bg: #328f5b;
+  --bg-dark: #61423f;
+  --bg-light: white;
+  --accent: #e03022;
+  --accent-variant: #a14840;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+#intro {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-container {
+  width: 65%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2em;
+}
+
+/* Left align the section header */
+.section-container > h1 {
+  width: 100%;
+}

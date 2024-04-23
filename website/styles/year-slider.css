@@ -1,0 +1,46 @@
+#year-slider-container {
+  position: fixed;
+  top: 8%;
+  left: 5%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+#slider-and-labels {
+  display: flex;
+  flex: 1 1 auto;
+  padding: 8px 0;
+}
+
+#year-slider {
+  writing-mode: vertical-lr;
+  appearance: none;
+  border: var(--bg-dark) solid 2px;
+  border-radius: 10px;
+}
+
+#year-slider-labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 5px;
+}
+
+.selected-label {
+  font-weight: bold;
+}
+
+/* todo: support other browsers */
+#year-slider::-webkit-slider-thumb {
+  height: 35px;
+  aspect-ratio: 1/1;
+  background-image: url(../images/soccer_ball.png);
+  background-size: contain;
+  cursor: pointer;
+  appearance: none;
+}
+
+#year-slider::-webkit-slider-thumb:hover {
+  opacity: 0.7;
+}

@@ -1,24 +1,63 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="main.js"></script>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/toggle-switch.css" />
+  <link rel="stylesheet" href="styles/year-slider.css" />
+  <link rel="stylesheet" href="styles/transfers.css" />
+  <link rel="stylesheet" href="styles/events.css" />
+  <script type="module" src="main.js"></script>
 </head>
 <body>
+  <div id="title-bar">
+    <h1>The beautiful game</h1>
+  </div>
+  <p id="intro">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu turpis
+    tempor, placerat elit id, iaculis massa. Quisque pellentesque lobortis
+    ultricies. Vivamus ut velit tristique, dignissim orci ac, imperdiet ligula.
+    Aenean sed velit ut eros elementum eleifend. Donec mollis et est eu
+    volutpat. Sed a scelerisque nulla. Donec faucibus ipsum lectus, sed
+    fringilla est aliquet non. Mauris quis massa sem. Curabitur in facilisis
+    leo. Phasellus lectus mi, tincidunt non diam at, tempor porta elit. Duis
+    bibendum vitae ante eget accumsan. Curabitur sit amet pellentesque purus,
+    quis vulputate dui. Suspendisse imperdiet, mi eget tincidunt ultricies, quam
+    mi tincidunt ex, et facilisis ex nisi ac justo. Praesent congue quam justo,
+    euismod maximus eros lacinia eu. Nunc vehicula sapien sit amet dapibus
+    dapibus.
+  </p>
 
-<input id="year-slider" type="range"/>
+  <div>
 
-<div id="transfers" class="section-container">
-    <div id="players-container"></div>
-    <svg id="map" width="100%">
-        <g id="countries"></g>
-        <g id="clubs"></g>
-    </svg>
-</div>
-
-<div id="events" class="section-container">
-    <div id="field">
-        <img id="field-lines" src="images/soccer_field.svg">
+  </div>
+  <div id="year-slider-container">
+    <label class="switch">
+      <input id="toggle-switch" type="checkbox" />
+      <span class="slider round"></span>
+    </label>
+    <div id="slider-and-labels">
+      <input id="year-slider" type="range" />
+      <div id="year-slider-labels"></div>
     </div>
-</div>
+  </div>
 
+  <div id="transfers" class="section-container">
+    <h1>Player careers</h1>
+    <div id="player-portraits"></div>
+    <svg id="map" width="100%">
+      <g id="countries"></g>
+      <g id="clubs"></g>
+    </svg>
+  </div>
+
+  <div id="events" class="section-container">
+    <h1>Style and events</h1>
+    <div id="field">
+      <img id="field-lines" src="images/soccer_field.svg" />
+    </div>
+  </div>
+
+  <div id="club-data" class="section-container">
+    <h1>Club data</h1>
+    <div id="club-data-container"></div>
+  </div>
 </body>
