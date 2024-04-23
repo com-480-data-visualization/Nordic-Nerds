@@ -11,8 +11,8 @@
   },
   {
     "name": "AC Milan",
-    "lat": 45.46444387988272,
-    "long": 9.171718640543641,
+    "lat": 45.47838841030036,
+    "long": 10.4,
     "image": {
       "src": "images/clubs/ac_milan.svg",
       "width": 361,
@@ -35,6 +35,36 @@
     "long": 7.179991264791874,
     "image": {
       "src": "images/clubs/molde.svg",
+      "width": 300,
+      "height": 160
+    }
+  },
+  {
+    "name": "FC Barcelona",
+    "lat": 41.3850639,
+    "long": 2.1734035,
+    "image": {
+      "src": "images/clubs/fc_barcelona.svg",
+      "width": 300,
+      "height": 160
+    }
+  },
+  {
+    "name": "FC Internazionale Milano",
+    "lat": 45.47838841030036,
+    "long": 8,
+    "image": {
+      "src": "images/clubs/fc_internazionale_milano.svg",
+      "width": 300,
+      "height": 160
+    }
+  },
+  {
+    "name": "Paris Saint-Germain",
+    "lat": 48.8063124545497,
+    "long": 2.278248192349387,
+    "image": {
+      "src": "images/clubs/paris_saint-germain.svg",
       "width": 300,
       "height": 160
     }

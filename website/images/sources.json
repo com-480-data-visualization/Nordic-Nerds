@@ -9,7 +9,11 @@
     "manchester_united.png": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1200px-Manchester_United_FC_crest.svg.png",
     "ac_milan.png": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Logo_of_AC_Milan.svg/1200px-Logo_of_AC_Milan.svg.png",
     "real_madrid.png": "https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/800px-Real_Madrid_CF.svg.png",
-    "molde.png": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Molde_Fotball_Logo.svg/1200px-Molde_Fotball_Logo.svg.png"
+    "molde.png": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Molde_Fotball_Logo.svg/1200px-Molde_Fotball_Logo.svg.png",
+    "fc_barcelona.png": "https://upload.wikimedia.org/wikipedia/sco/thumb/4/47/FC_Barcelona_%28crest%29.svg/1010px-FC_Barcelona_%28crest%29.svg.png",
+    "fc_internazionale_milano.png": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/1024px-FC_Internazionale_Milano_2021.svg.png",
+    "paris_saint-germain.png": "https://upload.wikimedia.org/wikipedia/fr/thumb/8/86/Paris_Saint-Germain_Logo.svg/1024px-Paris_Saint-Germain_Logo.svg.png"
+
   },
   "map": "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson",
   "soccer_field.svg": "https://upload.wikimedia.org/wikipedia/commons/8/82/Soccer_Field_Transparant.svg",
