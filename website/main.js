@@ -2,17 +2,21 @@ import * as data from "./data.js";
 import { drawMap } from "./components/map.js";
 import { drawPlayers } from "./components/players.js";
 import { setupYearSlider } from "./components/year-slider.js";
+import {drawEvents} from "./components/events.js";
 
 let playerData = [];
 let transferData = [];
 let mapData = [];
 let clubData = [];
+let eventsData = [];
 
 let selectedPlayer = null;
 let hoveredPlayer = null;
 
 let selectedClub = null;
 let hoveredClub = null;
+
+let selectedEvents = new Set();
 
 const setSelectedPlayer = (player) => {
   selectedPlayer = selectedPlayer != player ? player : null;
@@ -34,6 +38,16 @@ const setHoveredClub = (club) => {
   redraw();
 };
 
+const setSelectedEvents = (eventType) => {
+    if (selectedEvents.delete(eventType)) {
+        console.log(`${eventType} unselected.`);
+    } else {
+        selectedEvents.add(eventType);
+        console.log(`${eventType} selected.`);
+    }
+    redraw();
+}
+
 const redraw = () => {
   drawPlayers(
     playerData,
@@ -50,6 +64,13 @@ const redraw = () => {
     setSelectedClub,
     setHoveredClub
   );
+  drawEvents(
+    selectedPlayer,
+    selectedClub,
+    selectedEvents,
+    eventsData,
+    setSelectedEvents
+  )
 };
 
 window.onload = async () => {
@@ -60,6 +81,9 @@ window.onload = async () => {
     playerData.map((player) => data.getTransferData(player.name))
   );
   clubData = await data.getClubData();
+  eventsData = Promise.all(
+    playerData.map((player) => data.getEventsData(player.name))
+  );
 
   // Setup components
   setupYearSlider(2009, 2021, 2009, 2021, (year) =>
