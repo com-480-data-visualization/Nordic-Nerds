@@ -1,6 +1,5 @@
-[
-  {
-    "name": "Manchester United",
+{
+  "Manchester United":{
     "lat": 53.50774849971393,
     "long": -2.2450845100238173,
     "image": {
@@ -9,8 +8,7 @@
       "height": 300
     }
   },
-  {
-    "name": "AC Milan",
+  "AC Milan":{
     "lat": 45.47838841030036,
     "long": 10.4,
     "image": {
@@ -19,8 +17,7 @@
       "height": 566
     }
   },
-  {
-    "name": "Real Madrid",
+  "Real Madrid":{
     "lat": 40.40652957064298,
     "long": -3.7020457655245176,
     "image": {
@@ -29,8 +26,7 @@
       "height": 199.53999
     }
   },
-  {
-    "name": "Molde",
+  "Molde":{
     "lat": 62.73786840999907,
     "long": 7.179991264791874,
     "image": {
@@ -39,8 +35,7 @@
       "height": 160
     }
   },
-  {
-    "name": "FC Barcelona",
+  "FC Barcelona":{
     "lat": 41.3850639,
     "long": 2.1734035,
     "image": {
@@ -49,8 +44,7 @@
       "height": 160
     }
   },
-  {
-    "name": "FC Internazionale Milano",
+  "FC Internazionale":{
     "lat": 45.47838841030036,
     "long": 8,
     "image": {
@@ -59,8 +53,7 @@
       "height": 160
     }
   },
-  {
-    "name": "Paris Saint-Germain",
+  "Paris Saint-Germain":{
     "lat": 48.8063124545497,
     "long": 2.278248192349387,
     "image": {
@@ -68,5 +61,51 @@
       "width": 300,
       "height": 160
     }
+  },
+  "Manchester City":{
+    "lat": 53.50774849971393,
+    "long": -4.2450845100238173,
+    "image": {
+      "src": "images/clubs/manchester_city.svg",
+      "width": 409,
+      "height": 409
+    }
+  },
+  "Borussia Dortmund":{
+    "lat": 51.513728280727165,
+    "long": 7.4652785798264,
+    "image": {
+      "src": "images/clubs/borussia_dortmund.svg",
+      "width": 198.42,
+      "height": 198.42
+    }
+  },
+  "Sporting CP":{
+    "lat": 38.7436407460925,
+    "long": -9.148230526054906,
+    "image": {
+      "src": "images/clubs/sporting_cp.svg",
+      "width": 418.17,
+      "height": 561.259
+    }
+  },
+  "Juventus FC":{
+    "lat": 47.47838841030036,
+    "long": 9.4,
+    "image": {
+      "src": "images/clubs/juventus_fc.svg",
+      "width": 162.7, 
+      "height": 323.3
+    }
+  },
+  "Ajax Amsterdam":{
+    "lat": 52.35127126354948,
+    "long": 4.890185224918752,
+    "image": {
+      "src": "images/clubs/ajax_amsterdam.svg",
+      "width": 306, 
+      "height": 308
+    }
   }
-]
+
+}
