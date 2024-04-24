@@ -7,7 +7,7 @@ export const getClubData = () => getJsonData("club_data");
 
 export const getPlayerData = () => getJsonData("player_data");
 
-export const getTransferData = (player) => getJsonData(`transfers/${player}`)
+export const getTransferData = () => getJsonData("transfers")
 
 export const getEventsData = (player) => getJsonData(`events/${player}`)
 

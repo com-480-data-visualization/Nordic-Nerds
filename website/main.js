@@ -59,8 +59,11 @@ const redraw = () => {
   drawMap(
     mapData,
     clubData,
+    transferData,
     selectedClub,
     hoveredClub,
+    selectedPlayer,
+    hoveredPlayer,
     setSelectedClub,
     setHoveredClub
   );
@@ -77,9 +80,7 @@ window.onload = async () => {
   // Get data
   mapData = await data.getMapData();
   playerData = await data.getPlayerData();
-  transferData = Promise.all(
-    playerData.map((player) => data.getTransferData(player.name))
-  );
+  transferData  = await data.getTransferData();
   clubData = await data.getClubData();
   eventsData = Promise.all(
     playerData.map((player) => data.getEventsData(player.name))

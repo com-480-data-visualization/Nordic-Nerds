@@ -5,13 +5,18 @@ const MAP_BADGE_WIDTH = 40;
 export const drawMap = (
   mapData,
   clubData,
+  transferData,
   selectedClub,
   hoveredClub,
+  selectedPlayer,
+  hoveredPlayer,
   setSelectedClub,
   setHoveredClub
 ) => {
   let svg = d3.select("#map");
   const size = svg.node().getBoundingClientRect().width;
+
+  // const player_transfers = transferData.map((transfer))
 
   const projection = d3
     .geoMercator()
