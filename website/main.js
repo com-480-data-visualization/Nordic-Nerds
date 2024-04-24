@@ -3,6 +3,7 @@ import { drawMap } from "./components/map.js";
 import { drawPlayers } from "./components/players.js";
 import { setupYearSlider } from "./components/year-slider.js";
 import {drawEvents} from "./components/events.js";
+import {drawClubData} from "./components/clubdata.js";
 
 let playerData = [];
 let transferData = [];
@@ -72,6 +73,13 @@ const redraw = () => {
     selectedClub,
     selectedEvents,
     eventsData,
+    setSelectedEvents
+  );
+  drawClubData(
+    clubData,
+    transferData,
+    selectedPlayer,
+    selectedClub,
     setSelectedEvents
   )
 };
