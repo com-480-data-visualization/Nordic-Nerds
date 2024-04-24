@@ -47,21 +47,22 @@
         </svg>
       </div>
 
-      <div id="events" class="section-container">
-        <h1>Style and events</h1>
-        <div id="field">
-          <img id="field-lines" src="images/soccer_field.svg" />
-        </div>
-        <div id="event-buttons">
-          <button id="goal-button" class="event-button">Goals</button>
-        </div>
-      </div>
+  <div id="events" class="section-container">
+    <h1>Style and events</h1>
+    <svg id="field-map">
+      <g id="field-lines"></g>
+      <g id="heatmap"></g>
+    </svg>
+    <div id="event-buttons">
+      <button id="goal-button" class="event-button">Goals</button>
+    </div>
+  </div>
 
       <div id="club-data" class="section-container">
         <h1>Club data</h1>
         <div id="club-data-container">
           <p id="club-data-description"></p>
-          <svg id="scatter" width="100%"> 
+          <svg id="scatter" width="100%">
             <g id="dots"></g>
             <g id="x"></g>
             <g id="y"></g>
