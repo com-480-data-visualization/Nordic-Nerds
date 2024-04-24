@@ -2,6 +2,7 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import * as utils from "../utils.js";
 
 const MAP_BADGE_WIDTH = 40;
+const ARROW_COLORS = ["#b3e0de", "#81cdc6", "#4fb9af", "#28a99e", "#05998c", "#048c7f", "#037c6e", "#036c5f", "#025043"]
 
 export const drawMap = (
   mapData,
@@ -17,25 +18,30 @@ export const drawMap = (
   let svg = d3.select("#map");
   const size = svg.node().getBoundingClientRect().width;
 
-  const player_transfers = transferData[selectedPlayer?.name || hoveredPlayer?.name] || {data:[], metadata: {}};
-  const links = utils.range(0, player_transfers.data.length - 1).map((i) => {
-    const fromClub = clubData[player_transfers.data[i].club_name];
-    const toClub = clubData[player_transfers.data[i + 1].club_name];
+
+  const playerTransfers = transferData[selectedPlayer?.name || hoveredPlayer?.name] || {data:[], metadata: {}};
+  const playerClubs = selectedPlayer || hoveredPlayer ? playerTransfers.data.map(transfer => transfer.club_name) : [];
+  const filteredClubData = selectedPlayer || hoveredPlayer ? Object.keys(clubData)
+  .filter( key => playerClubs.includes(key) )
+  .reduce( (res, key) => (res[key] = clubData[key], res), {} ) : clubData;
+  const links = utils.range(0, playerTransfers.data.length - 1).map((i) => {
+    const fromClub = filteredClubData[playerTransfers.data[i].club_name];
+    const toClub = filteredClubData[playerTransfers.data[i + 1].club_name];
     return {
       type: "LineString",
+      color: ARROW_COLORS[i],
       coordinates: [
         [fromClub.long, fromClub.lat],
         [toClub.long, toClub.lat],
       ],
     };
   });
-  console.log(links);
 
   const projection = d3
     .geoMercator()
-    .center([6.566957, 43.518059])
+    .center([6.566957, 41.018059])
     .translate([size / 2, size / 2])
-    .scale(size / 1.2);
+    .scale(size*1.2);
 
   const path = d3.geoPath()
     .projection(projection)
@@ -49,6 +55,21 @@ export const drawMap = (
     .attr("fill", getComputedStyle(document.documentElement).getPropertyValue("--bg"))
     .attr("d", d3.geoPath().projection(projection));
 
+  svg.select("defs")
+    .selectAll("marker")
+    .data(ARROW_COLORS)
+    .join("marker")
+    .attr("id", d => `arrow-${d}`)
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 25)
+    .attr("refY", 0)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+    .append("path")
+    .attr("fill", d => d)
+    .attr("d", 'M0,-5L10,0L0,5');
+
   // Draw the links
   svg.select("#links")
     .selectAll("path")
@@ -56,14 +77,16 @@ export const drawMap = (
     .join("path")
       .attr("d", function(d){ return path(d)})
       .style("fill", "none")
-      .style("stroke", "#69b3a2")
+      .style("stroke", d => d.color)
       .style("stroke-width", 2)
+      .attr("marker-end", d => `url(#arrow-${d.color})`);
 
+    
   // Draw the clubs
   svg
     .select("#clubs")
     .selectAll("image")
-    .data(Object.entries(clubData))
+    .data(Object.entries(filteredClubData))
     .join("image")
     .attr("href", (d) => d[1].image.src)
     .attr("x", (d) => projection([d[1].long, d[1].lat])[0] - MAP_BADGE_WIDTH / 2)
