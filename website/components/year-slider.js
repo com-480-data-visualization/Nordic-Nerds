@@ -9,6 +9,7 @@ export const setupYearSlider = (
   onChange
 ) => {
   let slider = d3.select("#year-slider");
+  let container = d3.select("#year-slider-container");
   let sliderAndLabels = d3.select("#slider-and-labels");
   let toggle = d3.select("#year-slider-toggle");
   let labels = d3.select("#year-slider-labels");
@@ -36,7 +37,7 @@ export const setupYearSlider = (
       }
       slider.property("data-prev-value", year);
       toggle.property("checked", true);
-      sliderAndLabels.classed("inactive", false);
+      container.classed("inactive", false);
       onChange(year);
       setSelectedLabel(year);
     });
@@ -51,15 +52,15 @@ export const setupYearSlider = (
 
   toggle.on("change", () => {
     if (toggle.property("checked")) {
-      sliderAndLabels.classed("inactive", false);
+      container.classed("inactive", false);
       onChange(slider.property("value"));
     } else {
-      sliderAndLabels.classed("inactive", true);
+      container.classed("inactive", true);
       onChange(null);
     }
   });
 
-  sliderAndLabels.classed("inactive", true);
+  container.classed("inactive", true);
 
   setSelectedLabel(firstYear);
 };

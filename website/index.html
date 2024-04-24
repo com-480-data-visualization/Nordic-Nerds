@@ -26,40 +26,42 @@
     dapibus.
   </p>
 
-  <div id="year-slider-container">
-    <label class="switch">
-      <input id="year-slider-toggle" type="checkbox" />
-      <span class="slider round"></span>
-    </label>
-    <div id="slider-and-labels">
-      <input id="year-slider" type="range" />
-      <div id="year-slider-labels"></div>
+  <div id="viz">
+    <div id="left-sidebar" class="sidebar">
+      <div id="year-slider-container">
+        <input id="year-slider" type="range" />
+        <div id="year-slider-labels"></div>
+      </div>
     </div>
-  </div>
 
-  <div id="transfers" class="section-container">
-    <h1>Player careers</h1>
-    <div id="player-portraits"></div>
-    <svg id="map" width="100%">
-      <defs> </defs>
-      <g id="countries"></g>
-      <g id="links"></g>
-      <g id="clubs"></g>
-    </svg>
-  </div>
+    <div>
+      <div id="transfers" class="section-container">
+        <h1>Player careers</h1>
+        <div id="player-portraits"></div>
+        <svg id="map" width="100%">
+          <defs></defs>
+          <g id="countries"></g>
+          <g id="links"></g>
+          <g id="clubs"></g>
+        </svg>
+      </div>
 
-  <div id="events" class="section-container">
-    <h1>Style and events</h1>
-    <div id="field">
-      <img id="field-lines" src="images/soccer_field.svg" />
+      <div id="events" class="section-container">
+        <h1>Style and events</h1>
+        <div id="field">
+          <img id="field-lines" src="images/soccer_field.svg" />
+        </div>
+        <div id="event-buttons">
+          <button id="goal-button" class="event-button">Goals</button>
+        </div>
+      </div>
+
+      <div id="club-data" class="section-container">
+        <h1>Club data</h1>
+        <div id="club-data-container"></div>
+      </div>
     </div>
-    <div id="event-buttons">
-      <button id="goal-button" class="event-button">Goals</button>
-    </div>
-  </div>
 
-  <div id="club-data" class="section-container">
-    <h1>Club data</h1>
-    <div id="club-data-container"></div>
+    <div id="right-sidebar" class="sidebar"></div>
   </div>
 </body>
