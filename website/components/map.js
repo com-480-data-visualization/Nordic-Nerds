@@ -17,6 +17,7 @@ export const drawMap = (
 ) => {
   let svg = d3.select("#map");
   const size = svg.node().getBoundingClientRect().width;
+  console.log(size);
 
 
   const playerTransfers = transferData[selectedPlayer?.name || hoveredPlayer?.name] || {data:[], metadata: {}};

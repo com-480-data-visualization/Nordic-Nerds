@@ -40,14 +40,14 @@ const setHoveredClub = (club) => {
 };
 
 const setSelectedEvents = (eventType) => {
-    if (selectedEvents.delete(eventType)) {
-        console.log(`${eventType} unselected.`);
-    } else {
-        selectedEvents.add(eventType);
-        console.log(`${eventType} selected.`);
-    }
-    redraw();
-}
+  if (selectedEvents.delete(eventType)) {
+    console.log(`${eventType} unselected.`);
+  } else {
+    selectedEvents.add(eventType);
+    console.log(`${eventType} selected.`);
+  }
+  redraw();
+};
 
 const redraw = () => {
   drawPlayers(
@@ -85,10 +85,11 @@ const redraw = () => {
 };
 
 window.onload = async () => {
+  console.log("hei");
   // Get data
   mapData = await data.getMapData();
   playerData = await data.getPlayerData();
-  transferData  = await data.getTransferData();
+  transferData = await data.getTransferData();
   clubData = await data.getClubData();
   eventsData = Promise.all(
     playerData.map((player) => data.getEventsData(player.name))
@@ -101,5 +102,6 @@ window.onload = async () => {
 
   // Draw
   window.onresize = redraw;
+
   redraw();
 };

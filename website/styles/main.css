@@ -8,36 +8,46 @@
 
 body {
   font-family: sans-serif;
+  margin: 0;
 }
 
 #title {
   background-color: var(--bg);
   color: var(--bg-light);
   text-align: center;
+  padding: 1em;
+  margin-bottom: 1em;
 }
 
 #intro {
-  width: 70%;
-  margin: 0 auto;
+  margin: 0 5%;
   text-align: center;
   font-style: italic;
+  font-weight: 300;
+}
+
+#viz {
+  display: grid;
+  grid-template-columns: 1fr 3.5fr 1fr;
+  width: 100%;
+}
+
+.sidebar {
+  position: sticky;
+  height: fit-content;
+  top: 0;
+}
+
+/* Left align the section header */
+.section-container > h1 {
+  width: 100%;
 }
 
 .section-container {
-  width: 65%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-bottom: 2em;
-}
-
-.inactive {
-  opacity: 0.3;
-}
-
-/* Left align the section header */
-.section-container > h1 {
-  width: 100%;
 }
