@@ -6,4 +6,8 @@
   border: 2px solid var(--accent-variant);
   line-height: 0px;
   font-size: 12px;
+  background-color: darkgray;
+}
+#plot-title{
+  font-size: 15px;
 }

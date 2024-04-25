@@ -38,8 +38,10 @@ export const drawClubData = (clubData, transferData, selectedPlayer, selectedClu
 
   const svg = d3.select("#scatter");
   const margin = {top: 30, right: 30, bottom: 50, left: 30}
-  const width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
-  const height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
+  const FULL_WIDTH = svg.node().getBoundingClientRect().width
+  const FULL_HEIGHT = svg.node().getBoundingClientRect().height
+  const width =  FULL_WIDTH - margin.left - margin.right;
+  const height = FULL_HEIGHT - margin.top - margin.bottom;
 
   const svgStyle = getComputedStyle(svg.node())
   const fontSize = parseFloat(svgStyle.fontSize);
@@ -95,4 +97,24 @@ export const drawClubData = (clubData, transferData, selectedPlayer, selectedClu
     .attr("y", (d) => y(d[0].conceded) + fontSize * 0.80/2 )
     .classed("scatter-label", true)
     .text((d) => d[1][0][0] + " to " + d[1][0][1]);
+
+  const clubImage = clubData[selectedClub].image
+  const BADGE_SIZE = 75;
+  const BADGE_PADDING = 10;
+
+  svg.select("#badge")
+    .attr("href", clubImage.src)
+    .attr("x", FULL_WIDTH - BADGE_SIZE - BADGE_PADDING)
+    .attr("y", BADGE_PADDING)
+    .attr("opacity",0.6)
+    .attr("width", clubImage.width >= clubImage.height ? BADGE_SIZE : null)
+    .attr("height", clubImage.width < clubImage.height ? BADGE_SIZE : null)
+
+  svg
+    .select("#plot-title")
+    .text(`${selectedClub}'s performance with and without ${selectedPlayer.name}`)
+    .attr("y", margin.top )
+    .attr("x", width/2 + margin.left)
+    .style("text-anchor", "middle")
+    .style('fill', 'black')
 };
