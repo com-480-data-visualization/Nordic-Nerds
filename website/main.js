@@ -41,6 +41,16 @@ const setHoveredPlayer = (player) => {
 
 const setSelectedClub = (club) => {
   selectedClub = selectedClub != club ? club : null;
+
+  if (selectedClub != null) {
+    if (selectedPlayer != null) {
+      let year = transferData[selectedPlayer.name].data.find(
+        (transfer) => transfer.club_name == selectedClub
+      ).year;
+      yearSlider.setSelectedYear(year);
+    }
+  }
+
   redraw();
 };
 
@@ -51,7 +61,6 @@ const setHoveredClub = (club) => {
 
 const setSelectedYear = (year) => {
   selectedYear = year;
-  console.log(`Year selected: ${year}`);
   redraw();
 };
 
@@ -76,11 +85,13 @@ const redraw = () => {
   drawMap(
     mapData,
     clubData,
+    playerData,
     transferData,
     selectedClub,
     hoveredClub,
     selectedPlayer,
     hoveredPlayer,
+    selectedYear,
     setSelectedClub,
     setHoveredClub
   );
