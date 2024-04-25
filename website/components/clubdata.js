@@ -28,37 +28,65 @@ export const drawClubData = (clubData, transferData, selectedPlayer, selectedClu
     return [start, end];
   });
 
+  const negativeRanges = [[2001, ranges[0][0]]].concat(utils.zip2(ranges, utils.tail(ranges)).map(rangePair => [rangePair[0][1], rangePair[1][0]]), [[utils.last(ranges)[1], 2023]]) 
+  const allRanges = utils.zip2(utils.interleave(negativeRanges, ranges), utils.repeat([false, true], negativeRanges.length))
+  console.log(allRanges)
+
   textElem.innerHTML = `${selectedPlayer.name} ${
     ranges.length > 1 ? `had ${utils.numberWord(ranges.length)} spells at ${selectedClub}; from ` : `played at ${selectedClub} from `
   } ${utils.enumerationString(ranges.map((range) => range[0] + " to " + range[1]))}`;
 
   const svg = d3.select("#scatter");
-  const width = 460;
-  const height = 400;
+  const margin = {top: 30, right: 0, bottom: 0, left: 30}
+  const width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
+  const height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
 
-  const x = d3.scaleLinear().domain([0.5, 2.5]).range([0, width]);
+  svg
+    .select("#trans")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  const x = d3.scaleLinear().domain([0.8, 2.5]).range([margin.left, width - margin.right]);
   svg
     .select("#x")
-    .attr("transform", "translate(0," + height + ")")
+    .attr("transform", "translate("+ 0 + "," + height + ")")
+    // .text('Y Axis Label')
     .call(d3.axisBottom(x));
 
-  const y = d3.scaleLinear().domain([2.5, 0.5]).range([height, 0]);
+  const y = d3.scaleLinear().domain([1.5, 0.5]).range([height - margin.bottom, margin.top]);
   svg
-    .select("#x")
+    .select("#y")
+    .attr("transform", "translate(" + margin.left + ","+ 0 + ")")
     .call(d3.axisLeft(y));
+  svg
+    .select("#labelY")
+    .text("Goals against per game")
+    .attr("x", margin.left*3)
+    .attr("y", margin.top / 2)
+    .style('fill', 'black')
 
   const color = d3.scaleSequential()
     .domain(d3.extent(DUMMY_SPELLS, d => d.ppg))
     .interpolator(d3.interpolateReds);
 
+  const svgStyle = getComputedStyle(svg.node())
+  const fontSize = parseFloat(svgStyle.fontSize);
 
   svg
     .select("#dots")
-    .selectAll("dot")
-    .data(DUMMY_SPELLS)
-    .join("circle")
-    .attr("cx", (d) => x(d.scored))
-    .attr("cy", (d) => y(d.conceded))
-    .attr("r", 10)
-    .style("fill", d => color(d.ppg));
+    .selectAll("path")
+    .data(utils.zip2(DUMMY_SPELLS, allRanges))
+    .join("path")
+    .attr("d", d3.symbol(d => d[1][1] ? d3.symbolCircle : d3.symbolSquare, 1000))
+    .attr('transform', d => "translate("+x(d[0].scored)+","+y(d[0].conceded)+")")
+    .style("fill", d => color(d[0].ppg))
+
+  svg
+    .select("#dots")
+    .selectAll("text")
+    .data(utils.zip2(DUMMY_SPELLS, allRanges))
+    .join("text")
+    .attr("x", (d) => x(d[0].scored) + 20)
+    .attr("y", (d) => y(d[0].conceded) + fontSize * 0.80/2 )
+    .classed("scatter-label", true)
+    .text((d) => d[1][0][0] + " to " + d[1][0][1]);
 };

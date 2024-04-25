@@ -4,6 +4,30 @@ export const capitalizeFirstLetter = (s) =>
 export const range = (start, end) =>
   Array.from({ length: end - start }, (_, k) => k + start);
 
+export const zip2 = (arr1, arr2) => 
+  range(0, Math.min(arr1.length, arr2.length)).map(i => [arr1[i], arr2[i]])
+
+export const zipN = (arrs) => 
+  range(0, Math.min(...arrs.map(arr => arr.length))).map(i => range(0, arrs.length).map(arrIndex => arrs[arrIndex][i]))
+
+export const last = (arr) => 
+  arr[arr.length-1]
+
+export const tail = (arr) => 
+  arr.slice(1, arr.length)
+
+export const interleave = (arr1, arr2) => 
+  range(0, 2*Math.min(arr1.length, arr2.length) + (arr1.length > arr2.length ? 1 : 0))
+  .map(index => (index%2)==0 ? arr1[index/2] : arr2[(index-1)/2])
+
+export const repeat = (arr, n) => 
+  range(0, n)
+  .map(_ => arr).flat()
+
+export const enumerate = (arr) => 
+  arr.map((e, i) => [e, i])
+
+
 export const numberWord = (number) =>
 {
   switch (number) {
