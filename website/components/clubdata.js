@@ -37,29 +37,38 @@ export const drawClubData = (clubData, transferData, selectedPlayer, selectedClu
   } ${utils.enumerationString(ranges.map((range) => range[0] + " to " + range[1]))}`;
 
   const svg = d3.select("#scatter");
-  const margin = {top: 30, right: 0, bottom: 0, left: 30}
+  const margin = {top: 30, right: 30, bottom: 50, left: 30}
   const width = svg.node().getBoundingClientRect().width - margin.left - margin.right;
   const height = svg.node().getBoundingClientRect().height - margin.top - margin.bottom;
+
+  const svgStyle = getComputedStyle(svg.node())
+  const fontSize = parseFloat(svgStyle.fontSize);
 
   svg
     .select("#trans")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  const x = d3.scaleLinear().domain([0.8, 2.5]).range([margin.left, width - margin.right]);
+  const x = d3.scaleLinear().domain([0.8, 2.5]).range([margin.left, margin.left + width ]);
   svg
     .select("#x")
-    .attr("transform", "translate("+ 0 + "," + height + ")")
-    // .text('Y Axis Label')
+    .attr("transform", "translate("+ 0 + "," + (margin.top + height) + ")")
     .call(d3.axisBottom(x));
+  svg
+    .select("#labelX")
+    .text("Goals scored per game")
+    .attr("y", margin.top )
+    .attr("x", width/2 + margin.left)
+    .style("text-anchor", "middle")
+    .style('fill', 'black')
 
-  const y = d3.scaleLinear().domain([1.5, 0.5]).range([height - margin.bottom, margin.top]);
+  const y = d3.scaleLinear().domain([1.5, 0.5]).range([margin.top, margin.top + height]);
   svg
     .select("#y")
-    .attr("transform", "translate(" + margin.left + ","+ 0 + ")")
+    .attr("transform", "translate(" + margin.left + ","+  0 + ")")
     .call(d3.axisLeft(y));
   svg
     .select("#labelY")
-    .text("Goals against per game")
+    .text("Goals conceded per game")
     .attr("x", margin.left*3)
     .attr("y", margin.top / 2)
     .style('fill', 'black')
@@ -67,9 +76,6 @@ export const drawClubData = (clubData, transferData, selectedPlayer, selectedClu
   const color = d3.scaleSequential()
     .domain(d3.extent(DUMMY_SPELLS, d => d.ppg))
     .interpolator(d3.interpolateReds);
-
-  const svgStyle = getComputedStyle(svg.node())
-  const fontSize = parseFloat(svgStyle.fontSize);
 
   svg
     .select("#dots")
