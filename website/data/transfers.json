@@ -22,7 +22,7 @@
         "season": "2021/2022"
       }
     ],
-    "metadata": { "start": 0, "end": 0 }
+    "metadata": { "start": 2005, "end": 2021 }
   },
   "Cristiano Ronaldo": {
     "data": [
@@ -77,7 +77,7 @@
         "season": "2021/2022"
       }
     ],
-    "metadata": { "start": 0, "end": 2023 }
+    "metadata": { "start": 2002, "end": 2023 }
   },
   "Erling Haaland": {
     "data": [
@@ -102,7 +102,7 @@
         "season": "2022/2023"
       }
     ],
-    "metadata": { "start": 0, "end": 0 }
+    "metadata": { "start": 2019, "end": 2022 }
   },
   "Zlatan Ibrahimovic": {
     "data": [
@@ -207,7 +207,7 @@
         "season": "2019/2020"
       }
     ],
-    "metadata": { "start": 0, "end": 0 }
+    "metadata": { "start": 2001, "end": 2019 }
   },
   "Luis Su\u00e1rez": {
     "data": [
@@ -262,6 +262,6 @@
         "season": "2020/2021"
       }
     ],
-    "metadata": { "start": 0, "end": 0 }
+    "metadata": { "start": 2006, "end": 2020 }
   }
 }

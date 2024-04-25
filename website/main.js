@@ -1,9 +1,9 @@
 import * as data from "./data.js";
+import * as yearSlider from "./components/year-slider.js";
 import { drawMap } from "./components/map.js";
-import { drawPlayers } from "./components/players.js";
-import { setupYearSlider } from "./components/year-slider.js";
-import {drawEvents} from "./components/events.js";
-import {drawClubData} from "./components/clubdata.js";
+import * as players from "./components/players.js";
+import { drawEvents } from "./components/events.js";
+import { drawClubData } from "./components/clubdata.js";
 
 let playerData = [];
 let transferData = [];
@@ -17,10 +17,20 @@ let hoveredPlayer = null;
 let selectedClub = null;
 let hoveredClub = null;
 
+let selectedYear = null;
+
 let selectedEvents = new Set();
 
 const setSelectedPlayer = (player) => {
   selectedPlayer = selectedPlayer != player ? player : null;
+  // Set or reset year range
+  if (selectedPlayer != null) {
+    let range = transferData[selectedPlayer.name].metadata;
+    yearSlider.limitYear(range.start, range.end);
+  } else {
+    yearSlider.limitYear(null, null);
+  }
+
   redraw();
 };
 
@@ -39,6 +49,12 @@ const setHoveredClub = (club) => {
   redraw();
 };
 
+const setSelectedYear = (year) => {
+  selectedYear = year;
+  console.log(`Year selected: ${year}`);
+  redraw();
+};
+
 const setSelectedEvents = (eventType) => {
   if (selectedEvents.delete(eventType)) {
     console.log(`${eventType} unselected.`);
@@ -50,7 +66,7 @@ const setSelectedEvents = (eventType) => {
 };
 
 const redraw = () => {
-  drawPlayers(
+  players.draw(
     playerData,
     selectedPlayer,
     hoveredPlayer,
@@ -81,11 +97,10 @@ const redraw = () => {
     selectedPlayer,
     selectedClub,
     setSelectedEvents
-  )
+  );
 };
 
 window.onload = async () => {
-  console.log("hei");
   // Get data
   mapData = await data.getMapData();
   playerData = await data.getPlayerData();
@@ -96,12 +111,17 @@ window.onload = async () => {
   );
 
   // Setup components
-  setupYearSlider(2009, 2021, 2009, 2021, (year) =>
-    console.log(`${year} selected`)
+  yearSlider.setup(
+    ...Object.values(transferData)
+      .map((d) => d.metadata)
+      .reduce(
+        (acc, d) => [Math.min(acc[0], d.start), Math.max(acc[1], d.end)],
+        [Infinity, -Infinity]
+      ),
+    setSelectedYear
   );
 
   // Draw
   window.onresize = redraw;
-
   redraw();
 };
