@@ -1,7 +1,7 @@
 # Project of Data Visualization (COM-480)
 
 | Student's name                 | SCIPER |
-|--------------------------------|--------|
+| ------------------------------ | ------ |
 | Halvor Linder Henriksen        | 379433 |
 | Nils Holger Anders Johansson   | 376469 |
 | Arran Øystein Kostveit Gabriel | 375923 |
@@ -154,40 +154,33 @@ _(26th April, 5pm)_
 
 ### Sketches of initial visualization ideas
 
-Here the key visualizations of the project is briefly explained with simple sketches to give an impression of the final
+Here the key visualizations of the project are briefly explained with simple sketches to give an impression of the final
 result. A link to the latest update of the website is provided in the end of this section.
 
 #### 1: Player / Club - map
 
 The first and most important visualization of the project is the _Player / Club - map_ visualization. This interactive
 visualization controls the other visualizations on the website, and it is important that we succeed with a clear and easy
-to use interaction. In the default view where no player is selected the map displays all the clubs that the players have
-played for. When a player is selected arrows shows the players advancement through the football world. A slider on the
-left side can be activated to get an interactive visualization of where the player was located at a certain year. This
+to use interaction. In the default view where no player is selected the map displays the players at their current club. When a player is selected arrows show the player's journey through the world of football. A slider (of years) on the
+left side can be interacted with to "drag" the player through his career in the map. This
 slider will stay on the left of the screen when scrolling on the website to control the other visualizations for the
-player as well.
+player as well. Selecting a club badge in the map will set the slider to year the player arrived at the club. 
+The following visualizations will then be related to the players impact at this particular club.
 
 ![Map sketch](sketches/map_sketch.png)
 
 #### 2: Match event heatmap
 
-The _Match event heatmap_ visualization is an interactive visualization displaying where on the football pitch the
-player has made the largest impact. A heatmap will show where the largest concentration of a specific event has occurred
-during the players matches. The default view is when a player is selected but no year on the left slider that
-also will be present here. This view will include all event data for the player through his career and for example
-showcase where he has scored the most goals or committed most fouls. When a year is selected on the slider the user will
-see which club the player was in and the data displayed will only be from that year. This visualization is tightly
+The _Match event heatmap_ visualization is a visualization displaying the the playstyle of the selected team during the players stay at the club. A heatmap will show where the team scored its goals, took shots, and possibly more events. Again, the year silder controls which club will be paired with the player for this visualization. This visualization is tightly
 coupled with the first and will let the website visitor delve into the aspects of a players career visually through
 data.
 
 ![Field sketch](sketches/events_sketch.png)
 
-#### 3: Club timeline
+#### 3: Club impact
 
-The third and last visualization that will be included in the minimal viable product of the website is the _Club
-timeline_ visualization. This visualization is only displayed when a player and a year is selected. The idea of this
-timeline is to show how the player influenced the clubs performance during his stay. The three columns of the table will
-show how the club performed before, during and after the player was there.
+The third and last visualization that will be included in the minimal viable product of the website is the _Club impact_ visualization. This visualization is only displayed when a player and a club/year is selected. The idea of this
+visualization is to compare the clubs perfomance, before, during and after player stays. Our first attempt will test out a scatterplot with goals per game, and goals conceded per game on the axes, and points per game on a color scale. The points will be labeled with the period, e.g. _Ronaldo's first stay at Manchester United_.
 
 ![Club data sketch](sketches/club_progress_sketch.png)
 
@@ -197,30 +190,22 @@ progress towards the end goal.
 
 ### Tools
 
-We will have to use different techniques and tools to create the website skeleton and the visualizations we want. As
-described in the first lecture of the course we will build our website using a stack of tools. The bottom of the stack
-is the core web development tools as _Hypertext Markup Language_ (_HTML_) and _Cascading Style Sheets_ (_CSS_) which is
-used to
-define the structure and styles of the website. The second layer of the stack consists of _Scalable Vector Graphics_ (
-_SVG_)
-which will be used to define the graphics of the website as vector graphics. Vector graphics has the advantage that the
-quality is not affected by the size of the graphic so every visitor gets good-looking graphics invariant of screen
-resolution and size. The third layer of the stack consists of _Javascript_ (_JS_). _JS_ is used to define the actions
-and functions of the website. The top layer of the web stack will consist of _Data-Driven Documents Javascript_ (
-_D3.js_) which is used to create dynamic graphics.
+As prescribed by the course we will be building the website using a stack consisting of the core web development tools 
+of HTML, CSS and JavaScript. The visualizations themselves will be created with _D3.js_, allowing us to create
+a dynamic and data-driven document.
+
+Additionally we are using python and jupyter notebooks to analyze and shape the data to fit our final needs.
 
 We will use ideas and concepts from all the lectures of the course but some are more important than others. A list of
-the most important lectures we will take inspiration from is:
+the most important lectures we will take inspiration from are:
 
-- Week 1 - 3 for the basic web development including _HTML_, _CSS_ and _JS_.
-
-- Week 4 - 5 for the interactive data visualizations using _D3.js_ and data manipulation. _D3.js_ library will be a core
-  tool
-  for our project and will be used to a great extent. The datasets we will use are fairly well-structured but we need to
+- Week 4 - 5 for the interactive data visualizations using _D3.js_ and data manipulation. The datasets we will use are fairly well-structured but we need to
   extract the data of interest.
 
-- Week 7 for the maps that are to be used. For our core ideas we will include one geographical map of Europe with
-  interactions and one football pitch that will need some coordinates to display where events of the game have happened.
+- Week 7 for the map visualization. At the core of our idea is one geographical map of Europe with
+  interactions and a football pitch that will a coordinate map to display where events have happened.
+
+- Week 10 for the player paths in the map visualization. We model this as a directed graph.
 
 ### Implementation plan
 
@@ -250,22 +235,24 @@ that data into smaller datasets.
 #### Implementation
 
 - _Player / Club - map_
-    - Creating the layout of the graphics.
 
-    - First interactive components with arrows getting highlighted when a player is selected.
+  - Creating the layout of the graphics.
 
-    - More interactive components as small player icons move on the map when a slider with years is shifted.
+  - First interactive components with arrows getting highlighted when a player is selected.
+
+  - More interactive components as small player icons move on the map when a slider with years is shifted.
 
 - _Match event heatmap_
-    - Layout of the football pitch graphic.
 
-    - Interaction that if a specific event is selected a heatmap of location of the event is displayed on the pitch.
+  - Layout of the football pitch graphic.
 
-    - Player general statistics.
+  - Interaction that if a specific event is selected a heatmap of location of the event is displayed on the pitch.
+
+  - Player general statistics.
 
 - _Club timeline_
-    - Interaction that when a club for a selected player is clicked a fact table describing the club before, during and
-      after the player was there is displayed.
+  - Interaction that when a club for a selected player is clicked a fact table describing the club before, during and
+    after the player was there is displayed.
 
 #### Extra ideas
 
