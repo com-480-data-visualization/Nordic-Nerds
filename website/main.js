@@ -1,8 +1,8 @@
 import * as data from "./data.js";
 import * as yearSlider from "./components/year-slider.js";
-import { drawMap } from "./components/map.js";
+import * as map from "./components/map.js";
 import * as players from "./components/players.js";
-import { drawEvents } from "./components/events.js";
+import * as events from "./components/events.js";
 import { drawClubData } from "./components/clubdata.js";
 
 let playerData = [];
@@ -82,7 +82,7 @@ const redraw = () => {
     setSelectedPlayer,
     setHoveredPlayer
   );
-  drawMap(
+  map.draw(
     mapData,
     clubData,
     playerData,
@@ -95,7 +95,7 @@ const redraw = () => {
     setSelectedClub,
     setHoveredClub
   );
-  drawEvents(
+  events.draw(
     selectedPlayer,
     selectedClub,
     selectedEvents,
@@ -131,6 +131,9 @@ window.onload = async () => {
       ),
     setSelectedYear
   );
+
+  map.setup();
+  events.setup();
 
   // Draw
   window.onresize = redraw;

@@ -16,7 +16,25 @@ const ARROW_COLORS = [
 
 const svg = d3.select("#map");
 
-export const drawMap = (
+export const setup = () => {
+  svg
+    .select("defs")
+    .selectAll("marker")
+    .data(ARROW_COLORS)
+    .join("marker")
+    .attr("id", (d) => `arrow-${d}`)
+    .attr("viewBox", "0 -5 10 10")
+    .attr("refX", 25)
+    .attr("refY", 0)
+    .attr("markerWidth", 6)
+    .attr("markerHeight", 6)
+    .attr("orient", "auto")
+    .append("path")
+    .attr("fill", (d) => d)
+    .attr("d", "M0,-5L10,0L0,5");
+};
+
+export const draw = (
   mapData,
   clubData,
   playerData,
@@ -148,21 +166,6 @@ const drawClubs = (
 };
 
 const drawLinks = (links, projection) => {
-  svg
-    .select("defs")
-    .selectAll("marker")
-    .data(ARROW_COLORS)
-    .join("marker")
-    .attr("id", (d) => `arrow-${d}`)
-    .attr("viewBox", "0 -5 10 10")
-    .attr("refX", 25)
-    .attr("refY", 0)
-    .attr("markerWidth", 6)
-    .attr("markerHeight", 6)
-    .attr("orient", "auto")
-    .append("path")
-    .attr("fill", (d) => d)
-    .attr("d", "M0,-5L10,0L0,5");
   svg
     .select("#links")
     .selectAll("path")
