@@ -9,7 +9,7 @@ export const getPlayerData = () => getJsonData("player_data");
 
 export const getTransferData = () => getJsonData("transfers");
 
-export const getEventsData = (player) => getJsonData(`events/${player}`);
+export const getEventsData = () => getJsonData(`events`);
 
 const getJsonData = (fileName) =>
   fetch(`./data/${fileName}.json`).then((res) => res.json());

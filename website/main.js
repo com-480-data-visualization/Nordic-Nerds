@@ -96,6 +96,7 @@ const redraw = () => {
     setHoveredClub
   );
   events.draw(
+    selectedYear,
     selectedPlayer,
     selectedClub,
     selectedEvents,
@@ -117,9 +118,7 @@ window.onload = async () => {
   playerData = await data.getPlayerData();
   transferData = await data.getTransferData();
   clubData = await data.getClubData();
-  eventsData = Promise.all(
-    playerData.map((player) => data.getEventsData(player.name))
-  );
+  eventsData = await data.getEventsData();
 
   // Setup components
   yearSlider.setup(
