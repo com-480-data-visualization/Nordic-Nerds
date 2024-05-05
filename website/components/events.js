@@ -66,7 +66,8 @@ const data = eventsData
     .filter(d => {return selectedYear == null ? true : d.season == selectedYear})
     .filter(d => {return selectedPlayer == null ? true : d.player == selectedPlayer.name})
     .filter(d => {return selectedClub == null ? true : d.event_team == selectedClub})
-    .filter(d => {return selectedEvents.has("goal-button") ? d.is_goal : true});
+    .filter(d => {return selectedEvents.has("goal-button") ? d.is_goal : true})
+    .filter(d => {return selectedEvents.has("attempt-button") ? d.event_type == 1 : true});
 
     if (data.size != 0) {
         return Promise.resolve(data);
@@ -75,14 +76,6 @@ const data = eventsData
     }
 }
 
-/*
-The heatmap will use event data depending on year and player or club. We assume that there always exists a selected
-year. The different cases stated below will also be filtered by the currently selected events. There is
-no limitation to have more than one event selected simultaneously.
-1. No player or club is selected. Events for all players and clubs is displayed.
-2. A player but no club is selected. Events for player is displayed.
-3. A club but no player is selected. Events for club is displayed.
- */
 const drawEventHeatmap = (
     selectedYear,
     selectedPlayer,
