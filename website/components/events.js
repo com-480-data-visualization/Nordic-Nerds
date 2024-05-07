@@ -70,7 +70,6 @@ const data = eventsData
     .filter(d => {return selectedEvents.has("miss-button") ? !d.is_goal : true});
 
     if (data.size != 0) {
-        debugger
         return Promise.resolve(data);
     } else {
         return Promise.reject("No data found.");
