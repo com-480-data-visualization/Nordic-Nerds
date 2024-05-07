@@ -2,16 +2,18 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import * as utils from "../utils.js";
 
 const MAP_BADGE_WIDTH = 40;
-const ARROW_COLORS = [
-  "#b3e0de",
-  "#81cdc6",
-  "#4fb9af",
-  "#28a99e",
-  "#05998c",
-  "#048c7f",
-  "#037c6e",
-  "#036c5f",
-  "#025043",
+
+export const TRANSFER_COLORS = [
+  "#000000",
+  "#4a5079",
+  "#961C34",
+  "#93A80E",
+  "#4992E7",
+  "#e03022",
+  "#A9A7BC",
+  "#181B26",
+  "#ed6922",
+  "#4fa1c2",
 ];
 
 const svg = d3.select("#map");
@@ -20,7 +22,7 @@ export const setup = () => {
   svg
     .select("defs")
     .selectAll("marker")
-    .data(ARROW_COLORS)
+    .data(TRANSFER_COLORS)
     .join("marker")
     .attr("id", (d) => `arrow-${d}`)
     .attr("viewBox", "0 -5 10 10")
@@ -69,7 +71,7 @@ export const draw = (
       const toClub = filteredClubData[playerTransfers[i + 1].club_name];
       return {
         type: "LineString",
-        color: ARROW_COLORS[i],
+        color: TRANSFER_COLORS[i + 1],
         coordinates: [
           [fromClub.long, fromClub.lat],
           [toClub.long, toClub.lat],

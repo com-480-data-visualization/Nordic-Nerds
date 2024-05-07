@@ -27,7 +27,11 @@ const setSelectedPlayer = (player) => {
   if (selectedPlayer != null) {
     let range = transferData[selectedPlayer.name].metadata;
     yearSlider.limitYear(range.start, range.end);
+    yearSlider.setIntervals(
+      transferData[selectedPlayer.name].data.map((d) => d.year)
+    );
   } else {
+    yearSlider.setIntervals(null);
     yearSlider.limitYear(null, null);
   }
 
