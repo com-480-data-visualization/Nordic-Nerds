@@ -51,3 +51,24 @@ body {
   align-items: center;
   padding-bottom: 2em;
 }
+
+#player-portraits {
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  gap: 10px;
+}
+
+.player-portrait {
+  width: 50%;
+  margin: auto;
+  border-radius: 50% 20%;
+  background-color: var(--bg);
+  opacity: 0.7;
+}
+
+.player-portrait-selected {
+  opacity: 1;
+  filter: drop-shadow(0px 0px 2px var(--bg));
+}
