@@ -67,9 +67,10 @@ const data = eventsData
     .filter(d => {return selectedPlayer == null ? true : d.player == selectedPlayer.name})
     .filter(d => {return selectedClub == null ? true : d.event_team == selectedClub})
     .filter(d => {return selectedEvents.has("goal-button") ? d.is_goal : true})
-    .filter(d => {return selectedEvents.has("attempt-button") ? d.event_type == 1 : true});
+    .filter(d => {return selectedEvents.has("miss-button") ? !d.is_goal : true});
 
     if (data.size != 0) {
+        debugger
         return Promise.resolve(data);
     } else {
         return Promise.reject("No data found.");
