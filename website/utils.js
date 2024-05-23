@@ -73,4 +73,4 @@ export const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 export const findPlayerClub = (player, transfers, year) => transfers[player.name].data
     .slice()
     .reverse()
-    .find((transfer) => transfer.year <= year).club_name;
+    .find((transfer) => transfer.year <= year)?.club_name;

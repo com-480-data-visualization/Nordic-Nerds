@@ -6,3 +6,8 @@
 .club-badge-selected {
   filter: drop-shadow(0px 0px 2px var(--accent));
 }
+
+#map > #players > image:hover,
+.map-player-selected {
+  filter: drop-shadow(0px 0px 2px var(--accent));
+}

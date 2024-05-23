@@ -69,10 +69,7 @@ export const draw = (
 
     const playersClubs = [
       {
-        club: transferData[player.name].data
-          .slice()
-          .reverse()
-          .find((transfer) => transfer.year <= selectedYear)?.club_name,
+        club: utils.findPlayerClub(player, transferData, selectedYear),
         player: player,
       },
     ];
@@ -104,10 +101,7 @@ export const draw = (
   } else {
     const playersClubs = playerData.map((player) => {
       return {
-        club: transferData[player.name].data
-          .slice()
-          .reverse()
-          .find((transfer) => transfer.year <= selectedYear)?.club_name,
+        club: utils.findPlayerClub(player, transferData, selectedYear),
         player: player,
       };
     });
@@ -133,18 +127,18 @@ export const draw = (
     .translate([size / 2, size / 2])
     .scale(size * 1.2);
 
+  // Draw the map
   drawCountries(mapData, projection);
-
   drawClubs(
     clubs,
     clubData,
     playersAndClubs,
     clubToPlayers,
     selectedClub,
+    selectedPlayer,
     setSelectedPlayer,
     projection
   );
-
   drawLinks(links, projection);
 };
 
@@ -180,6 +174,7 @@ const drawClubs = (
   playersAndClubs,
   clubToPlayers,
   selectedClub,
+  selectedPlayer,
   setSelectedPlayer,
   projection
 ) => {
@@ -213,7 +208,8 @@ const drawClubs = (
     )
     .attr("width", 40)
     .attr("height", 40)
-    .on("click", (_, d) => setSelectedPlayer(d.player));
+    .on("click", (_, d) => setSelectedPlayer(d.player))
+    .classed("map-player-selected", (d) => selectedPlayer == d.player);
 
   svg
     .select("#clubs")
