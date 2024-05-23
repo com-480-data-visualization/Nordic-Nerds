@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="85mm"
+   height="125mm"
+   viewBox="0 0 85 125"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="clubs_legend.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.6851541"
+     inkscape:cx="142.71692"
+     inkscape:cy="199.98171"
+     inkscape:window-width="1800"
+     inkscape:window-height="1097"
+     inkscape:window-x="0"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern24"
+       preserveAspectRatio="xMidYMid"
+       id="pattern25"
+       patternTransform="matrix(0.35355339,0.35355339,-0.35355339,0.35355339,0,0)"
+       x="0"
+       y="0" />
+    <pattern
+       inkscape:collect="always"
+       patternUnits="userSpaceOnUse"
+       width="2.5"
+       height="1"
+       patternTransform="translate(0,0) scale(2,2)"
+       preserveAspectRatio="xMidYMid"
+       id="pattern24"
+       style="fill:#000000"
+       inkscape:stockid="Stripes 02 (2:3)"
+       inkscape:isstock="true"
+       inkscape:label="Stripes 02 (2:3)">
+      <rect
+   style="stroke:none"
+   x="0"
+   y="-0.5"
+   width="1"
+   height="2"
+   id="rect23" />
+
+    </pattern>
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#Strips1_1.5"
+       preserveAspectRatio="xMidYMid"
+       id="pattern21"
+       patternTransform="matrix(0.35355339,0.35355339,-0.35355339,0.35355339,0,0)"
+       x="0"
+       y="0" />
+    <pattern
+       inkscape:collect="always"
+       patternUnits="userSpaceOnUse"
+       width="2.5"
+       height="1"
+       patternTransform="translate(0,0) scale(2,2)"
+       preserveAspectRatio="xMidYMid"
+       id="Strips1_1.5"
+       style="fill:#000000"
+       inkscape:stockid="Stripes 02 (2:3)"
+       inkscape:isstock="true"
+       inkscape:label="Stripes 02 (2:3)">
+      <rect
+   style="stroke:none"
+   x="0"
+   y="-0.5"
+   width="1"
+   height="2"
+   id="rect140" />
+
+    </pattern>
+    <linearGradient
+       id="linearGradient7">
+      <stop
+         style="stop-color:#880000;stop-opacity:1;"
+         offset="0"
+         id="stop7" />
+      <stop
+         style="stop-color:#d1c2bd;stop-opacity:1;"
+         offset="1"
+         id="stop8" />
+    </linearGradient>
+    <linearGradient
+       xlink:href="#linearGradient7"
+       id="linearGradient8"
+       x1="15"
+       y1="50"
+       x2="15"
+       y2="120"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(1,0,0,0.79364612,0,10.317694)" />
+  </defs>
+  <g
+     id="layer1">
+    <path
+       style="fill:#ffffff;stroke-width:0.134258"
+       id="rect3"
+       width="210"
+       height="171.82997"
+       x="0"
+       y="0"
+       ry="0.45526445"
+       d="M 2.2403943,0 H 83.701657 c 0.09839,0 0.277126,0.00396039 0.32812,0.13739362 0.03,0.0785025 0.02817,0.29630218 0.02817,0.46175155 V 112.46821 c 0,0.16545 -0.0023,0.46602 -0.0817,0.55177 -0.02778,0.03 -0.06084,0.0474 -0.09645,0.0474 H 2.0622475 c -0.098694,-2e-5 -0.1781468,-0.13363 -0.1781468,-0.29959 V 0.29957259 c 0,-0.0598501 0.010332,-0.1154926 0.028174,-0.1621788 C 1.9632684,0.00396042 2.1420065,0 2.2403943,0 Z"
+       inkscape:export-filename="clubs_legend.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:url(#pattern25);stroke-width:0.264583;stroke:#000000;stroke-opacity:1;fill-opacity:1"
+       id="rect4"
+       width="10"
+       height="9.999999"
+       x="10"
+       y="30.000002"
+       ry="0.45526445" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;fill:#000000;stroke-width:0.264583"
+       x="25"
+       y="16.773533"
+       id="text4"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
+         x="25"
+         y="16.773533"
+         id="tspan5">With player</tspan></text>
+    <ellipse
+       style="fill:url(#pattern21);stroke-width:0.264583;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       id="path6"
+       cx="15"
+       cy="14.999998"
+       rx="5"
+       ry="4.9999995" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;fill:#000000;stroke-width:0.264583"
+       x="25"
+       y="36.773537"
+       id="text4-5"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
+         x="25"
+         y="36.773537"
+         id="tspan5-8">Without player</tspan></text>
+    <path
+       style="fill:url(#linearGradient8);stroke-width:0.203281"
+       id="rect6"
+       width="5"
+       height="70"
+       x="12.5"
+       y="50"
+       d="m 15,50 c 1.385,0 2.5,0.884915 2.5,1.984115 v 51.586995 c 0,1.0992 -1.115,1.98412 -2.5,1.98412 -1.385,0 -2.5,-0.88492 -2.5,-1.98412 V 51.984115 C 12.5,50.884915 13.615,50 15,50 Z"
+       ry="2.5" />
+    <text
+       xml:space="preserve"
+       style="font-size:6.35px;fill:#2b0000;fill-opacity:1;stroke-width:0.264583"
+       x="24.842991"
+       y="74.504707"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="24.842991"
+         y="74.504707"><tspan
+           id="tspan8"
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#2b0000;stroke-width:0.264583"
+           x="24.842991"
+           y="74.504707">Points per game</tspan></tspan><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         x="24.842991"
+         y="82.442207" /><tspan
+         sodipodi:role="line"
+         x="24.842991"
+         y="74.504707"
+         id="tspan4"><tspan
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#2b0000;stroke-width:0.264583"
+           x="24.842991"
+           y="74.504707"
+           id="tspan6">                       </tspan></tspan><tspan
+         sodipodi:role="line"
+         x="24.842991"
+         y="82.442207"
+         id="tspan7"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">(darker = more)</tspan></text>
+  </g>
+</svg>
