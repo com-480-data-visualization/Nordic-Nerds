@@ -11,5 +11,7 @@ export const getTransferData = () => getJsonData("transfers");
 
 export const getEventsData = () => getJsonData(`events`);
 
+export const getClubPerformanceData = () => getJsonData("club_performance");
+
 const getJsonData = (fileName) =>
   fetch(`./data/${fileName}.json`).then((res) => res.json());

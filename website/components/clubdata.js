@@ -1,14 +1,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import * as utils from "../utils.js";
 
-const DUMMY_SPELLS = [
-  { scored: 1.2, conceded: 0.8, ppg: 1.7 },
-  { scored: 2, conceded: 0.7, ppg: 2 },
-  { scored: 1.7, conceded: 1.2, ppg: 1.4 },
-  { scored: 0.9, conceded: 1.3, ppg: 1 },
-  { scored: 1.2, conceded: 1.3, ppg: 1.2 },
-  { scored: 2.2, conceded: 1, ppg: 2.3 },
-];
+const CLUB_PERF_START_YEAR = 2000;
 
 const MARGIN = { top: 30, right: 30, bottom: 50, left: 30 };
 
@@ -17,8 +10,7 @@ const DOT_SIZE = 500;
 let prevSelectedPlayer = null;
 let prevSelectedClub = null;
 
-export const draw = (transferData, selectedPlayer, selectedClub) => {
-  console.log("Drawing club data");
+export const draw = (transferData, clubPerformanceData, selectedPlayer, selectedClub) => {
   const description = d3
     .select("#club-data-description")
     .style("font-style", "italic");
@@ -63,16 +55,36 @@ export const draw = (transferData, selectedPlayer, selectedClub) => {
     return [start, end];
   });
 
-  const negativeRanges = [[2001, ranges[0][0]]].concat(
+  const negativeRanges = [[2000, ranges[0][0]]].concat(
     utils
       .zip2(ranges, utils.tail(ranges))
       .map((rangePair) => [rangePair[0][1], rangePair[1][0]]),
-    [[utils.last(ranges)[1], 2023]]
+    utils.last(ranges)[1]!=2023 ? [[utils.last(ranges)[1], 2023]] : []
   );
   const allRanges = utils.zip2(
     utils.interleave(negativeRanges, ranges),
     utils.repeat([false, true], negativeRanges.length)
   );
+
+  console.log(allRanges);
+  const clubPerformance = clubPerformanceData[selectedClub];
+  console.log(clubPerformance);
+  const spellPerformance = allRanges.map(range => {
+    const start = range[0][0] - CLUB_PERF_START_YEAR;
+    const end = range[0][1] - CLUB_PERF_START_YEAR;
+    const years = clubPerformance.slice(start, end);
+    const scored = years.reduce((old, n) => old + n.scored, 0);
+    const conceded = years.reduce((old, n) => old + n.conceded, 0);
+    const played = years.reduce((old, n) => old + n.played, 0);
+    const wins = years.reduce((old, n) => old + n.won, 0);
+    const draws = years.reduce((old, n) => old + n.draw, 0);
+    console.log(start, end, scored, conceded, played, wins, draws);
+    return {
+       scored: scored / played , conceded: conceded / played, ppg: (3 * wins + draws)/ played
+    };
+  });
+  const spells = utils.zip2(spellPerformance, allRanges);
+
 
   description.text(
     `${selectedPlayer.name} ${
@@ -92,7 +104,7 @@ export const draw = (transferData, selectedPlayer, selectedClub) => {
 
   const x = d3
     .scaleLinear()
-    .domain([0.8, 2.5])
+    .domain([1.25, 2.9])
     .range([MARGIN.left, MARGIN.left + width]);
 
   svg
@@ -112,7 +124,7 @@ export const draw = (transferData, selectedPlayer, selectedClub) => {
 
   const y = d3
     .scaleLinear()
-    .domain([1.5, 0.5])
+    .domain([1.35, 0.6])
     .range([MARGIN.top, MARGIN.top + height]);
   svg
     .select("#y")
@@ -129,12 +141,12 @@ export const draw = (transferData, selectedPlayer, selectedClub) => {
 
   const color = d3
     .scaleSequential()
-    .domain(d3.extent(DUMMY_SPELLS, (d) => d.ppg))
+    .domain(d3.extent(spellPerformance, (d) => d.ppg))
     .interpolator(d3.interpolateRgb("#d1c2bd", "#880000"));
   svg
     .select("#dots")
     .selectAll("path")
-    .data(utils.zip2(DUMMY_SPELLS, allRanges))
+    .data(spells)
     .join("path")
     .attr(
       "d",
@@ -145,8 +157,6 @@ export const draw = (transferData, selectedPlayer, selectedClub) => {
       (d) => "translate(" + x(d[0].scored) + "," + y(d[0].conceded) + ")"
     )
     .style("fill", (d) => color(d[0].ppg));
-
-  const spells = utils.zip2(DUMMY_SPELLS, allRanges);
 
   svg
     .select("#dots")

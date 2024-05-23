@@ -11,6 +11,7 @@ let transferData = [];
 let mapData = [];
 let clubData = [];
 let eventsData = [];
+let clubPerformanceData  = [];
 
 let selectedPlayer = null;
 let hoveredPlayer = null;
@@ -126,6 +127,7 @@ const redraw = (hover) => {
     );
     club.draw(
       transferData,
+      clubPerformanceData,
       selectedPlayer,
       selectedClub,
       setSelectedEvents
@@ -140,6 +142,7 @@ window.onload = async () => {
   transferData = await data.getTransferData();
   clubData = await data.getClubData();
   eventsData = await data.getEventsData();
+  clubPerformanceData = await data.getClubPerformanceData();
 
   // Setup components
   yearSlider.setup(

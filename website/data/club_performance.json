@@ -19,7 +19,11 @@
     { "year": 2016, "team": "AC Milan", "scored": 52, "conceded": 42, "played": 38, "won": 17, "draw": 11 },
     { "year": 2017, "team": "AC Milan", "scored": 77, "conceded": 58, "played": 50, "won": 22, "draw": 12 },
     { "year": 2018, "team": "AC Milan", "scored": 75, "conceded": 49, "played": 48, "won": 24, "draw": 14 },
-    { "year": 2019, "team": "AC Milan", "scored": 29, "conceded": 16, "played": 19, "won": 11, "draw": 4 }
+    { "year": 2019, "team": "AC Milan", "scored": 29, "conceded": 16, "played": 19, "won": 11, "draw": 4 },
+    { "year": 2020, "team": "AC Milan", "scored": 55, "conceded": 53, "played": 39, "won": 15, "draw": 10 },
+    { "year": 2021, "team": "AC Milan", "scored": 52, "conceded": 42, "played": 38, "won": 17, "draw": 11 },
+    { "year": 2022, "team": "AC Milan", "scored": 77, "conceded": 58, "played": 50, "won": 22, "draw": 12 },
+    { "year": 2023, "team": "AC Milan", "scored": 75, "conceded": 49, "played": 48, "won": 24, "draw": 14 }
   ],
   "Manchester City": [
     { "year": 2000, "team": "Manchester City", "scored": 26, "conceded": 37, "played": 21, "won": 5, "draw": 4 },
@@ -41,7 +45,11 @@
     { "year": 2016, "team": "Manchester City", "scored": 97, "conceded": 56, "played": 52, "won": 26, "draw": 15 },
     { "year": 2017, "team": "Manchester City", "scored": 122, "conceded": 41, "played": 48, "won": 36, "draw": 8 },
     { "year": 2018, "team": "Manchester City", "scored": 121, "conceded": 44, "played": 47, "won": 33, "draw": 5 },
-    { "year": 2019, "team": "Manchester City", "scored": 55, "conceded": 13, "played": 22, "won": 20, "draw": 0 }
+    { "year": 2019, "team": "Manchester City", "scored": 55, "conceded": 13, "played": 22, "won": 20, "draw": 0 },
+    { "year": 2020, "team": "Manchester City", "scored": 97, "conceded": 56, "played": 52, "won": 26, "draw": 15 },
+    { "year": 2021, "team": "Manchester City", "scored": 122, "conceded": 41, "played": 48, "won": 36, "draw": 8 },
+    { "year": 2022, "team": "Manchester City", "scored": 121, "conceded": 44, "played": 47, "won": 33, "draw": 5 },
+    { "year": 2023, "team": "Manchester City", "scored": 55, "conceded": 13, "played": 22, "won": 20, "draw": 0 }
   ],
   "Manchester United": [
     { "year": 2000, "team": "Manchester United", "scored": 120, "conceded": 48, "played": 54, "won": 37, "draw": 11 },
@@ -63,7 +71,11 @@
     { "year": 2016, "team": "Manchester United", "scored": 75, "conceded": 48, "played": 48, "won": 26, "draw": 10 },
     { "year": 2017, "team": "Manchester United", "scored": 94, "conceded": 35, "played": 56, "won": 32, "draw": 17 },
     { "year": 2018, "team": "Manchester United", "scored": 74, "conceded": 50, "played": 45, "won": 25, "draw": 8 },
-    { "year": 2019, "team": "Manchester United", "scored": 27, "conceded": 29, "played": 22, "won": 10, "draw": 4 }
+    { "year": 2019, "team": "Manchester United", "scored": 27, "conceded": 29, "played": 22, "won": 10, "draw": 4 },
+    { "year": 2020, "team": "Manchester United", "scored": 75, "conceded": 48, "played": 48, "won": 26, "draw": 10 },
+    { "year": 2021, "team": "Manchester United", "scored": 94, "conceded": 35, "played": 56, "won": 32, "draw": 17 },
+    { "year": 2022, "team": "Manchester United", "scored": 74, "conceded": 50, "played": 45, "won": 25, "draw": 8 },
+    { "year": 2023, "team": "Manchester United", "scored": 27, "conceded": 29, "played": 22, "won": 10, "draw": 4 }
   ],
   "Real Madrid": [
     { "year": 2000, "team": "Real Madrid", "scored": 100, "conceded": 62, "played": 54, "won": 31, "draw": 11 },
@@ -85,7 +97,11 @@
     { "year": 2016, "team": "Real Madrid", "scored": 133, "conceded": 47, "played": 50, "won": 36, "draw": 12 },
     { "year": 2017, "team": "Real Madrid", "scored": 135, "conceded": 57, "played": 53, "won": 38, "draw": 7 },
     { "year": 2018, "team": "Real Madrid", "scored": 118, "conceded": 67, "played": 52, "won": 31, "draw": 9 },
-    { "year": 2019, "team": "Real Madrid", "scored": 42, "conceded": 32, "played": 24, "won": 13, "draw": 3 }
+    { "year": 2019, "team": "Real Madrid", "scored": 42, "conceded": 32, "played": 24, "won": 13, "draw": 3 },
+    { "year": 2020, "team": "Real Madrid", "scored": 133, "conceded": 47, "played": 50, "won": 36, "draw": 12 },
+    { "year": 2021, "team": "Real Madrid", "scored": 135, "conceded": 57, "played": 53, "won": 38, "draw": 7 },
+    { "year": 2022, "team": "Real Madrid", "scored": 118, "conceded": 67, "played": 52, "won": 31, "draw": 9 },
+    { "year": 2023, "team": "Real Madrid", "scored": 42, "conceded": 32, "played": 24, "won": 13, "draw": 3 }
   ],
   "FC Barcelona": [
     { "year": 2000, "team": "FC Barcelona", "scored": 96, "conceded": 66, "played": 52, "won": 27, "draw": 10 },
@@ -107,7 +123,11 @@
     { "year": 2016, "team": "FC Barcelona", "scored": 140, "conceded": 38, "played": 48, "won": 35, "draw": 6 },
     { "year": 2017, "team": "FC Barcelona", "scored": 135, "conceded": 37, "played": 49, "won": 37, "draw": 8 },
     { "year": 2018, "team": "FC Barcelona", "scored": 124, "conceded": 51, "played": 48, "won": 31, "draw": 13 },
-    { "year": 2019, "team": "FC Barcelona", "scored": 54, "conceded": 22, "played": 27, "won": 19, "draw": 6 }
+    { "year": 2019, "team": "FC Barcelona", "scored": 54, "conceded": 22, "played": 27, "won": 19, "draw": 6 },
+    { "year": 2020, "team": "FC Barcelona", "scored": 140, "conceded": 38, "played": 48, "won": 35, "draw": 6 },
+    { "year": 2021, "team": "FC Barcelona", "scored": 135, "conceded": 37, "played": 49, "won": 37, "draw": 8 },
+    { "year": 2022, "team": "FC Barcelona", "scored": 124, "conceded": 51, "played": 48, "won": 31, "draw": 13 },
+    { "year": 2023, "team": "FC Barcelona", "scored": 54, "conceded": 22, "played": 27, "won": 19, "draw": 6 }
   ],
   "FC Internazionale": [
     { "year": 2000, "team": "FC Internazionale", "scored": 57, "conceded": 42, "played": 40, "won": 17, "draw": 13 },
@@ -129,7 +149,11 @@
     { "year": 2016, "team": "FC Internazionale", "scored": 62, "conceded": 59, "played": 45, "won": 20, "draw": 7 },
     { "year": 2017, "team": "FC Internazionale", "scored": 78, "conceded": 42, "played": 39, "won": 22, "draw": 7 },
     { "year": 2018, "team": "FC Internazionale", "scored": 69, "conceded": 37, "played": 44, "won": 22, "draw": 12 },
-    { "year": 2019, "team": "FC Internazionale", "scored": 31, "conceded": 20, "played": 23, "won": 10, "draw": 7 }
+    { "year": 2019, "team": "FC Internazionale", "scored": 31, "conceded": 20, "played": 23, "won": 10, "draw": 7 },
+    { "year": 2020, "team": "FC Internazionale", "scored": 62, "conceded": 59, "played": 45, "won": 20, "draw": 7 },
+    { "year": 2021, "team": "FC Internazionale", "scored": 78, "conceded": 42, "played": 39, "won": 22, "draw": 7 },
+    { "year": 2022, "team": "FC Internazionale", "scored": 69, "conceded": 37, "played": 44, "won": 22, "draw": 12 },
+    { "year": 2023, "team": "FC Internazionale", "scored": 31, "conceded": 20, "played": 23, "won": 10, "draw": 7 }
   ],
   "Paris Saint-Germain": [
     { "year": 2000, "team": "Paris Saint-Germain", "scored": 70, "conceded": 62, "played": 44, "won": 16, "draw": 14 },
@@ -151,7 +175,11 @@
     { "year": 2016, "team": "Paris Saint-Germain", "scored": 111, "conceded": 37, "played": 48, "won": 31, "draw": 10 },
     { "year": 2017, "team": "Paris Saint-Germain", "scored": 133, "conceded": 37, "played": 46, "won": 37, "draw": 5 },
     { "year": 2018, "team": "Paris Saint-Germain", "scored": 119, "conceded": 38, "played": 44, "won": 31, "draw": 8 },
-    { "year": 2019, "team": "Paris Saint-Germain", "scored": 58, "conceded": 28, "played": 23, "won": 15, "draw": 2 }
+    { "year": 2019, "team": "Paris Saint-Germain", "scored": 58, "conceded": 28, "played": 23, "won": 15, "draw": 2 },
+    { "year": 2020, "team": "Paris Saint-Germain", "scored": 111, "conceded": 37, "played": 48, "won": 31, "draw": 10 },
+    { "year": 2021, "team": "Paris Saint-Germain", "scored": 133, "conceded": 37, "played": 46, "won": 37, "draw": 5 },
+    { "year": 2022, "team": "Paris Saint-Germain", "scored": 119, "conceded": 38, "played": 44, "won": 31, "draw": 8 },
+    { "year": 2023, "team": "Paris Saint-Germain", "scored": 58, "conceded": 28, "played": 23, "won": 15, "draw": 2 }
   ],
   "Borussia Dortmund": [
     { "year": 2000, "team": "Borussia Dortmund", "scored": 46, "conceded": 52, "played": 37, "won": 12, "draw": 10 },
@@ -173,7 +201,11 @@
     { "year": 2016, "team": "Borussia Dortmund", "scored": 103, "conceded": 45, "played": 45, "won": 27, "draw": 13 },
     { "year": 2017, "team": "Borussia Dortmund", "scored": 90, "conceded": 65, "played": 45, "won": 20, "draw": 10 },
     { "year": 2018, "team": "Borussia Dortmund", "scored": 84, "conceded": 48, "played": 44, "won": 25, "draw": 12 },
-    { "year": 2019, "team": "Borussia Dortmund", "scored": 37, "conceded": 30, "played": 19, "won": 10, "draw": 4 }
+    { "year": 2019, "team": "Borussia Dortmund", "scored": 37, "conceded": 30, "played": 19, "won": 10, "draw": 4 },
+    { "year": 2020, "team": "Borussia Dortmund", "scored": 103, "conceded": 45, "played": 45, "won": 27, "draw": 13 },
+    { "year": 2021, "team": "Borussia Dortmund", "scored": 90, "conceded": 65, "played": 45, "won": 20, "draw": 10 },
+    { "year": 2022, "team": "Borussia Dortmund", "scored": 84, "conceded": 48, "played": 44, "won": 25, "draw": 12 },
+    { "year": 2023, "team": "Borussia Dortmund", "scored": 37, "conceded": 30, "played": 19, "won": 10, "draw": 4 }
   ],
   "Sporting CP": [
     { "year": 2000, "team": "Sporting CP", "scored": 61, "conceded": 37, "played": 40, "won": 22, "draw": 10 },
@@ -195,7 +227,11 @@
     { "year": 2016, "team": "Sporting CP", "scored": 86, "conceded": 39, "played": 43, "won": 26, "draw": 6 },
     { "year": 2017, "team": "Sporting CP", "scored": 88, "conceded": 42, "played": 42, "won": 27, "draw": 9 },
     { "year": 2018, "team": "Sporting CP", "scored": 84, "conceded": 41, "played": 45, "won": 29, "draw": 6 },
-    { "year": 2019, "team": "Sporting CP", "scored": 43, "conceded": 20, "played": 22, "won": 13, "draw": 5 }
+    { "year": 2019, "team": "Sporting CP", "scored": 43, "conceded": 20, "played": 22, "won": 13, "draw": 5 },
+    { "year": 2020, "team": "Sporting CP", "scored": 86, "conceded": 39, "played": 43, "won": 26, "draw": 6 },
+    { "year": 2021, "team": "Sporting CP", "scored": 88, "conceded": 42, "played": 42, "won": 27, "draw": 9 },
+    { "year": 2022, "team": "Sporting CP", "scored": 84, "conceded": 41, "played": 45, "won": 29, "draw": 6 },
+    { "year": 2023, "team": "Sporting CP", "scored": 43, "conceded": 20, "played": 22, "won": 13, "draw": 5 }
   ],
   "Juventus FC": [
     { "year": 2000, "team": "Juventus FC", "scored": 58, "conceded": 39, "played": 40, "won": 21, "draw": 11 },
@@ -217,7 +253,11 @@
     { "year": 2016, "team": "Juventus FC", "scored": 98, "conceded": 28, "played": 46, "won": 37, "draw": 4 },
     { "year": 2017, "team": "Juventus FC", "scored": 107, "conceded": 38, "played": 53, "won": 38, "draw": 9 },
     { "year": 2018, "team": "Juventus FC", "scored": 92, "conceded": 31, "played": 48, "won": 38, "draw": 6 },
-    { "year": 2019, "team": "Juventus FC", "scored": 37, "conceded": 24, "played": 23, "won": 12, "draw": 5 }
+    { "year": 2019, "team": "Juventus FC", "scored": 37, "conceded": 24, "played": 23, "won": 12, "draw": 5 },
+    { "year": 2020, "team": "Juventus FC", "scored": 98, "conceded": 28, "played": 46, "won": 37, "draw": 4 },
+    { "year": 2021, "team": "Juventus FC", "scored": 107, "conceded": 38, "played": 53, "won": 38, "draw": 9 },
+    { "year": 2022, "team": "Juventus FC", "scored": 92, "conceded": 31, "played": 48, "won": 38, "draw": 6 },
+    { "year": 2023, "team": "Juventus FC", "scored": 37, "conceded": 24, "played": 23, "won": 12, "draw": 5 }
   ],
   "Ajax Amsterdam": [
     { "year": 2000, "team": "Ajax Amsterdam", "scored": 81, "conceded": 54, "played": 39, "won": 19, "draw": 8 },
@@ -239,10 +279,19 @@
     { "year": 2016, "team": "Ajax Amsterdam", "scored": 87, "conceded": 36, "played": 44, "won": 28, "draw": 13 },
     { "year": 2017, "team": "Ajax Amsterdam", "scored": 116, "conceded": 45, "played": 48, "won": 31, "draw": 7 },
     { "year": 2018, "team": "Ajax Amsterdam", "scored": 119, "conceded": 33, "played": 45, "won": 34, "draw": 8 },
-    { "year": 2019, "team": "Ajax Amsterdam", "scored": 70, "conceded": 32, "played": 23, "won": 16, "draw": 2 }
+    { "year": 2019, "team": "Ajax Amsterdam", "scored": 70, "conceded": 32, "played": 23, "won": 16, "draw": 2 },
+    { "year": 2020, "team": "Ajax Amsterdam", "scored": 87, "conceded": 36, "played": 44, "won": 28, "draw": 13 },
+    { "year": 2021, "team": "Ajax Amsterdam", "scored": 116, "conceded": 45, "played": 48, "won": 31, "draw": 7 },
+    { "year": 2022, "team": "Ajax Amsterdam", "scored": 119, "conceded": 33, "played": 45, "won": 34, "draw": 8 },
+    { "year": 2023, "team": "Ajax Amsterdam", "scored": 70, "conceded": 32, "played": 23, "won": 16, "draw": 2 }
   ],
   "FC Red Bull Salzburg": [
+    { "year": 2000, "team": "FC Red Bull Salzburg", "scored": 2, "conceded": 11, "played": 4, "won": 1, "draw": 0 },
+    { "year": 2001, "team": "FC Red Bull Salzburg", "scored": 2, "conceded": 11, "played": 4, "won": 1, "draw": 0 },
+    { "year": 2002, "team": "FC Red Bull Salzburg", "scored": 2, "conceded": 11, "played": 4, "won": 1, "draw": 0 },
     { "year": 2003, "team": "FC Red Bull Salzburg", "scored": 2, "conceded": 11, "played": 4, "won": 1, "draw": 0 },
+    { "year": 2004, "team": "FC Red Bull Salzburg", "scored": 6, "conceded": 9, "played": 6, "won": 2, "draw": 1 },
+    { "year": 2005, "team": "FC Red Bull Salzburg", "scored": 6, "conceded": 9, "played": 6, "won": 2, "draw": 1 },
     { "year": 2006, "team": "FC Red Bull Salzburg", "scored": 6, "conceded": 9, "played": 6, "won": 2, "draw": 1 },
     { "year": 2007, "team": "FC Red Bull Salzburg", "scored": 10, "conceded": 6, "played": 6, "won": 4, "draw": 0 },
     { "year": 2008, "team": "FC Red Bull Salzburg", "scored": 14, "conceded": 6, "played": 6, "won": 3, "draw": 0 },
@@ -256,6 +305,10 @@
     { "year": 2016, "team": "FC Red Bull Salzburg", "scored": 14, "conceded": 9, "played": 12, "won": 6, "draw": 2 },
     { "year": 2017, "team": "FC Red Bull Salzburg", "scored": 21, "conceded": 3, "played": 12, "won": 7, "draw": 5 },
     { "year": 2018, "team": "FC Red Bull Salzburg", "scored": 37, "conceded": 20, "played": 18, "won": 12, "draw": 4 },
-    { "year": 2019, "team": "FC Red Bull Salzburg", "scored": 8, "conceded": 6, "played": 4, "won": 2, "draw": 0 }
+    { "year": 2019, "team": "FC Red Bull Salzburg", "scored": 8, "conceded": 6, "played": 4, "won": 2, "draw": 0 },
+    { "year": 2020, "team": "FC Red Bull Salzburg", "scored": 14, "conceded": 9, "played": 12, "won": 6, "draw": 2 },
+    { "year": 2021, "team": "FC Red Bull Salzburg", "scored": 21, "conceded": 3, "played": 12, "won": 7, "draw": 5 },
+    { "year": 2022, "team": "FC Red Bull Salzburg", "scored": 37, "conceded": 20, "played": 18, "won": 12, "draw": 4 },
+    { "year": 2023, "team": "FC Red Bull Salzburg", "scored": 8, "conceded": 6, "played": 4, "won": 2, "draw": 0 }
   ]
 }
