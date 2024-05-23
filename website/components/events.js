@@ -37,9 +37,11 @@ export const draw = (
     eventsData,
     setSelectedEvents
 ) => {
-    resizeFieldLines();
-    drawEventButtons(selectedEvents, setSelectedEvents);
-    drawEventHeatmap(selectedYear, selectedPlayer, selectedClub, selectedEvents, eventsData);
+    if (selectedPlayer){
+        resizeFieldLines();
+        drawEventButtons(selectedEvents, setSelectedEvents);
+        drawEventHeatmap(selectedYear, selectedPlayer, selectedClub, selectedEvents, eventsData);
+    }
 };
 
 const drawEventButtons = (selectedEvents, setSelectedEvents) => {
