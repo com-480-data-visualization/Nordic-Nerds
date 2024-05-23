@@ -17,9 +17,10 @@
 }
 
 #legend {
+  position: absolute;
   grid-area: inner-div;
-  margin-top: -46%;
-  margin-left: 80%;
-  width: 15%;
+  margin-top: 27.4%;
+  margin-left: -80%;
+  width: 10%;
   border: 1px solid var(--accent-variant);
 }
