@@ -3,7 +3,18 @@ import * as utils from "../utils.js";
 
 const MAP_BADGE_WIDTH = 40;
 
-export const TRANSFER_COLORS = ["#000000", "#4a5079", "#961C34", "#93A80E", "#4992E7", "#e03022", "#A9A7BC", "#181B26", "#ed6922", "#4fa1c2"];
+export const TRANSFER_COLORS = [
+  "#4a5079",
+  "#961C34",
+  "#93A80E",
+  "#4992E7",
+  "#e03022",
+  "#A9A7BC",
+  "#000000",
+  "#181B26",
+  "#ed6922",
+  "#4fa1c2",
+];
 
 const svg = d3.select("#map");
 
@@ -31,12 +42,10 @@ export const draw = (
   playerData,
   transferData,
   selectedClub,
-  hoveredClub,
   selectedPlayer,
   hoveredPlayer,
   selectedYear,
-  setSelectedClub,
-  setHoveredClub
+  setSelectedPlayer
 ) => {
   let links = [];
   let clubs = [];
@@ -45,11 +54,18 @@ export const draw = (
 
   if (selectedPlayer || hoveredPlayer) {
     const player = selectedPlayer || hoveredPlayer;
-    const playerTransfers = transferData[selectedPlayer?.name || hoveredPlayer?.name].data.filter((transfer) => transfer.year <= selectedYear);
+    const playerTransfers = transferData[
+      selectedPlayer?.name || hoveredPlayer?.name
+    ].data.filter((transfer) => transfer.year <= selectedYear);
 
     const filteredClubData = Object.keys(clubData)
-      .filter((clubName) => playerTransfers.some((t) => t.club_name == clubName))
-      .reduce((res, clubName) => ((res[clubName] = clubData[clubName]), res), {});
+      .filter((clubName) =>
+        playerTransfers.some((t) => t.club_name == clubName)
+      )
+      .reduce(
+        (res, clubName) => ((res[clubName] = clubData[clubName]), res),
+        {}
+      );
 
     const playersClubs = [
       {
@@ -63,7 +79,12 @@ export const draw = (
     playersAndClubs = playersClubs.filter((pair) => pair.club);
     clubToPlayers = Object.fromEntries(
       Object.keys(clubData)
-        .map((club) => [club, playersClubs.filter((player) => player.club == club).map((player) => player.player)])
+        .map((club) => [
+          club,
+          playersClubs
+            .filter((player) => player.club == club)
+            .map((player) => player.player),
+        ])
         .filter((d) => d[1].length > 0)
     );
 
@@ -92,7 +113,12 @@ export const draw = (
     });
     clubToPlayers = Object.fromEntries(
       Object.keys(clubData)
-        .map((club) => [club, playersClubs.filter((player) => player.club == club).map((player) => player.player)])
+        .map((club) => [
+          club,
+          playersClubs
+            .filter((player) => player.club == club)
+            .map((player) => player.player),
+        ])
         .filter((d) => d[1].length > 0)
     );
     links = [];
@@ -109,7 +135,15 @@ export const draw = (
 
   drawCountries(mapData, projection);
 
-  drawClubs(clubs, clubData, playersAndClubs, clubToPlayers, selectedClub, hoveredClub, setSelectedClub, setHoveredClub, projection);
+  drawClubs(
+    clubs,
+    clubData,
+    playersAndClubs,
+    clubToPlayers,
+    selectedClub,
+    setSelectedPlayer,
+    projection
+  );
 
   drawLinks(links, projection);
 };
@@ -140,8 +174,15 @@ const player_y_offset = (index) => {
   }
 };
 
-const drawClubs = (clubs, clubData, playersAndClubs, clubToPlayers, selectedClub, hoveredClub, setSelectedClub, setHoveredClub, projection) => {
-  console.log(clubToPlayers);
+const drawClubs = (
+  clubs,
+  clubData,
+  playersAndClubs,
+  clubToPlayers,
+  selectedClub,
+  setSelectedPlayer,
+  projection
+) => {
   svg
     .select("#players")
     .selectAll("image")
@@ -153,33 +194,52 @@ const drawClubs = (clubs, clubData, playersAndClubs, clubToPlayers, selectedClub
       (d) =>
         projection([clubData[d.club].long, clubData[d.club].lat])[0] -
         MAP_BADGE_WIDTH / 2 +
-        player_x_offset(clubToPlayers[d.club].findIndex((player) => d.player.name == player.name))
+        player_x_offset(
+          clubToPlayers[d.club].findIndex(
+            (player) => d.player.name == player.name
+          )
+        )
     )
     .attr(
       "y",
       (d) =>
         projection([clubData[d.club].long, clubData[d.club].lat])[1] -
         MAP_BADGE_WIDTH / 2 +
-        player_y_offset(clubToPlayers[d.club].findIndex((player) => d.player.name == player.name))
+        player_y_offset(
+          clubToPlayers[d.club].findIndex(
+            (player) => d.player.name == player.name
+          )
+        )
     )
-    .attr("width", (d) => 40)
-    .attr("height", (d) => 40);
+    .attr("width", 40)
+    .attr("height", 40)
+    .on("click", (_, d) => setSelectedPlayer(d.player));
+
   svg
     .select("#clubs")
     .selectAll("image")
     .data(clubs)
     .join("image")
     .attr("href", (d) => d[1].image.src)
-    .attr("x", (d) => projection([d[1].long, d[1].lat])[0] - MAP_BADGE_WIDTH / 2)
-    .attr("y", (d) => projection([d[1].long, d[1].lat])[1] - MAP_BADGE_WIDTH / 2)
-    .attr("opacity", (d) => (selectedClub == null || selectedClub == d[0] || hoveredClub == d[0] ? 1 : 0.7))
-    .classed("club-badge-selected", (d) => selectedClub == d[0] || hoveredClub == d[0])
+    .attr(
+      "x",
+      (d) => projection([d[1].long, d[1].lat])[0] - MAP_BADGE_WIDTH / 2
+    )
+    .attr(
+      "y",
+      (d) => projection([d[1].long, d[1].lat])[1] - MAP_BADGE_WIDTH / 2
+    )
+    .attr("opacity", (d) =>
+      selectedClub == null || selectedClub == d[0] ? 1 : 0.7
+    )
+    .classed("club-badge-selected", (d) => selectedClub == d[0])
     // These are mutually exclusive
-    .attr("width", (d) => (d[1].image.width >= d[1].image.height ? MAP_BADGE_WIDTH : null))
-    .attr("height", (d) => (d[1].image.width < d[1].image.height ? MAP_BADGE_WIDTH : null))
-    .on("click", (_, d) => setSelectedClub(d[0]))
-    .on("mouseenter", (_, d) => setHoveredClub(d[0]))
-    .on("mouseleave", (_) => setHoveredClub(null));
+    .attr("width", (d) =>
+      d[1].image.width >= d[1].image.height ? MAP_BADGE_WIDTH : null
+    )
+    .attr("height", (d) =>
+      d[1].image.width < d[1].image.height ? MAP_BADGE_WIDTH : null
+    );
 };
 
 const drawLinks = (links, projection) => {
@@ -201,6 +261,9 @@ const drawCountries = (mapData, projection) => {
     .selectAll("path")
     .data(mapData)
     .join("path")
-    .attr("fill", getComputedStyle(document.documentElement).getPropertyValue("--bg"))
+    .attr(
+      "fill",
+      getComputedStyle(document.documentElement).getPropertyValue("--bg")
+    )
     .attr("d", d3.geoPath().projection(projection));
 };

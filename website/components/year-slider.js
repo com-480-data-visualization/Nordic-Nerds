@@ -11,7 +11,7 @@ const setSelectedLabel = (year) => {
 };
 
 export const setup = (firstYear, lastYear, onChange) => {
-  changeYear = (year) => {
+  changeYear = (year, update) => {
     // Filter out values that are out of the valid range, and reset to the previous value
     let min = slider.attr("data-min-year") ?? firstYear;
     let max = slider.attr("data-max-year") ?? lastYear;
@@ -21,14 +21,16 @@ export const setup = (firstYear, lastYear, onChange) => {
     }
     slider.property("value", year);
     slider.attr("data-prev-value", year);
-    onChange(year);
+    if (update) {
+      onChange(year);
+    }
     setSelectedLabel(year);
   };
 
   slider
     .attr("min", firstYear)
     .attr("max", lastYear)
-    .on("input", () => changeYear(slider.property("value")));
+    .on("input", () => changeYear(slider.property("value"), true));
 
   labels
     .selectAll("span")
@@ -37,7 +39,7 @@ export const setup = (firstYear, lastYear, onChange) => {
     .append("span")
     .text((d) => d);
 
-  changeYear(lastYear);
+  changeYear(lastYear, true);
 };
 
 export const limitYear = (minYear, maxYear) => {
@@ -48,7 +50,8 @@ export const limitYear = (minYear, maxYear) => {
 
   let oldVal = slider.attr("data-prev-value");
   let newVal = utils.clamp(oldVal, min, max);
-  if (newVal != oldVal) changeYear(newVal);
+  if (newVal != oldVal) changeYear(newVal, false);
+  return newVal;
 };
 
 export const setIntervals = (transferYears) => {
@@ -66,4 +69,4 @@ export const setIntervals = (transferYears) => {
   });
 };
 
-export const setSelectedYear = (year) => changeYear(year);
+export const setSelectedYear = (year) => changeYear(year, false);
