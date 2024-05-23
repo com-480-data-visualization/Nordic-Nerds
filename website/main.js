@@ -3,7 +3,7 @@ import * as yearSlider from "./components/year-slider.js";
 import * as map from "./components/map.js";
 import * as players from "./components/players.js";
 import * as events from "./components/events.js";
-import { drawClubData } from "./components/clubdata.js";
+import * as club from "./components/clubdata.js";
 import * as utils from "./utils.js";
 
 let playerData = [];
@@ -46,7 +46,7 @@ const setSelectedPlayer = (player) => {
 
 const setHoveredPlayer = (player) => {
   hoveredPlayer = player;
-  redraw();
+  redraw(true);
 };
 
 const setSelectedYear = (year) => {
@@ -73,42 +73,65 @@ const setSelectedEvents = (eventType) => {
   redraw();
 };
 
-const redraw = () => {
-  players.draw(
-    playerData,
-    selectedPlayer,
-    clubData,
-    selectedClub,
-    hoveredPlayer,
-    setSelectedPlayer,
-    setHoveredPlayer
-  );
-  map.draw(
-    mapData,
-    clubData,
-    playerData,
-    transferData,
-    selectedClub,
-    selectedPlayer,
-    hoveredPlayer,
-    selectedYear,
-    setSelectedPlayer
-  );
-  events.draw(
-    selectedYear,
-    selectedPlayer,
-    selectedClub,
-    selectedEvents,
-    eventsData,
-    setSelectedEvents
-  );
-  drawClubData(
-    clubData,
-    transferData,
-    selectedPlayer,
-    selectedClub,
-    setSelectedEvents
-  );
+const redraw = (hover) => {
+  if (hover) {
+    players.draw(
+      playerData,
+      selectedPlayer,
+      clubData,
+      selectedClub,
+      hoveredPlayer,
+      setSelectedPlayer,
+      setHoveredPlayer
+    );
+    map.draw(
+      mapData,
+      clubData,
+      playerData,
+      transferData,
+      selectedClub,
+      selectedPlayer,
+      hoveredPlayer,
+      selectedYear,
+      setSelectedPlayer
+    );
+  } else {
+    players.draw(
+      playerData,
+      selectedPlayer,
+      clubData,
+      selectedClub,
+      hoveredPlayer,
+      setSelectedPlayer,
+      setHoveredPlayer
+    );
+    map.draw(
+      mapData,
+      clubData,
+      playerData,
+      transferData,
+      selectedClub,
+      selectedPlayer,
+      hoveredPlayer,
+      selectedYear,
+      setSelectedPlayer
+    );
+    events.draw(
+      selectedYear,
+      selectedPlayer,
+      selectedClub,
+      selectedEvents,
+      eventsData,
+      setSelectedEvents
+    );
+    club.draw(
+      clubData,
+      transferData,
+      selectedPlayer,
+      selectedClub,
+      setSelectedEvents
+    );
+  }
 };
 
 window.onload = async () => {
@@ -134,6 +157,6 @@ window.onload = async () => {
   events.setup();
 
   // Draw
-  window.onresize = redraw;
+  window.onresize = () => redraw(false);
   redraw();
 };
