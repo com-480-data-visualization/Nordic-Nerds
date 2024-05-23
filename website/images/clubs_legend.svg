@@ -59,7 +59,7 @@
        x="25"
        y="16.773533"
        id="text4"><tspan
-         style="font-size:6.35px;stroke-width:0.264583"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
          x="25"
          y="16.773533"
          id="tspan5">With player</tspan></text>
@@ -76,7 +76,7 @@
        x="25"
        y="36.773537"
        id="text4-5"><tspan
-         style="font-size:6.35px;stroke-width:0.264583"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
          x="25"
          y="36.773537"
          id="tspan5-8">Without player</tspan></text>
@@ -95,13 +95,26 @@
        x="24.842991"
        y="74.504707"
        id="text8"><tspan
-         id="tspan8"
-         style="fill:#2b0000;stroke-width:0.264583"
+         id="tspan1"
          x="24.842991"
-         y="74.504707">Points per game</tspan><tspan
-         style="fill:#2b0000;stroke-width:0.264583"
+         y="74.504707"><tspan
+           id="tspan8"
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#2b0000;stroke-width:0.264583"
+           x="24.842991"
+           y="74.504707">Points per game</tspan></tspan><tspan
+         id="tspan2"
+         x="24.842991"
+         y="82.442207" /><tspan
+         x="24.842991"
+         y="74.504707"
+         id="tspan4"><tspan
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#2b0000;stroke-width:0.264583"
+           x="24.842991"
+           y="74.504707"
+           id="tspan6">                       </tspan></tspan><tspan
          x="24.842991"
          y="82.442207"
-         id="tspan9">(darker = more)</tspan></text>
+         id="tspan7"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">(darker = more)</tspan></text>
   </g>
 </svg>

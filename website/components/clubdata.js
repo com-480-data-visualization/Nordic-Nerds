@@ -12,15 +12,16 @@ const DUMMY_SPELLS = [
 
 const MARGIN = { top: 30, right: 30, bottom: 50, left: 30 };
 
-const BADGE_SIZE = 75;
-const BADGE_PADDING = 10;
+const DOT_SIZE = 500;
 
 let prevSelectedPlayer = null;
 let prevSelectedClub = null;
 
 export const draw = (clubData, transferData, selectedPlayer, selectedClub) => {
   console.log("Drawing club data");
-  const description = d3.select("#club-data-description");
+  const description = d3
+    .select("#club-data-description")
+    .style("font-style", "italic");
   const svg = d3.select("#scatter");
 
   const FULL_WIDTH = svg.node().getBoundingClientRect().width;
@@ -105,7 +106,9 @@ export const draw = (clubData, transferData, selectedPlayer, selectedClub) => {
     .attr("y", MARGIN.top)
     .attr("x", width / 2 + MARGIN.left)
     .style("text-anchor", "middle")
-    .style("fill", "black");
+    .style("fill", "black")
+    .style("font-size", fontSize * 1.3)
+    .style("font-weight", "bold");
 
   const y = d3
     .scaleLinear()
@@ -118,14 +121,16 @@ export const draw = (clubData, transferData, selectedPlayer, selectedClub) => {
   svg
     .select("#labelY")
     .text("Goals conceded per game")
-    .attr("x", MARGIN.left * 3)
+    .attr("x", MARGIN.left * 5.1)
     .attr("y", MARGIN.top / 2)
-    .style("fill", "black");
+    .style("fill", "black")
+    .style("font-size", fontSize * 1.2)
+    .style("font-weight", "bold");
 
   const color = d3
     .scaleSequential()
     .domain(d3.extent(DUMMY_SPELLS, (d) => d.ppg))
-    .interpolator(d3.interpolateReds);
+    .interpolator(d3.interpolateRgb("#d1c2bd", "#880000"));
   svg
     .select("#dots")
     .selectAll("path")
@@ -133,7 +138,7 @@ export const draw = (clubData, transferData, selectedPlayer, selectedClub) => {
     .join("path")
     .attr(
       "d",
-      d3.symbol((d) => (d[1][1] ? d3.symbolCircle : d3.symbolSquare), 1000)
+      d3.symbol((d) => (d[1][1] ? d3.symbolCircle : d3.symbolSquare), DOT_SIZE)
     )
     .attr(
       "transform",
