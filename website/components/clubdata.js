@@ -84,6 +84,9 @@ export const draw = (transferData, clubPerformanceData, selectedPlayer, selected
     };
   });
   const spells = utils.zip2(spellPerformance, allRanges);
+  const gpg = spellPerformance.map(rec => rec.scored);
+  const cpg = spellPerformance.map(rec => rec.conceded);
+  const ppg = spellPerformance.map(rec => rec.ppg);
 
 
   description.text(
@@ -102,9 +105,11 @@ export const draw = (transferData, clubPerformanceData, selectedPlayer, selected
     .select("#trans")
     .attr("transform", "translate(" + MARGIN.left + "," + MARGIN.top + ")");
 
+  const gpgMin = Math.min(...gpg);
+  const gpgMax = Math.max(...gpg);
   const x = d3
     .scaleLinear()
-    .domain([1.25, 2.9])
+    .domain([gpgMin - (gpgMax - gpgMin)*0.05, gpgMax + (gpgMax-gpgMin)*0.15])
     .range([MARGIN.left, MARGIN.left + width]);
 
   svg
@@ -122,9 +127,11 @@ export const draw = (transferData, clubPerformanceData, selectedPlayer, selected
     .style("font-size", fontSize * 1.3)
     .style("font-weight", "bold");
 
+  const cpgMin = Math.min(...cpg);
+  const cpgMax = Math.max(...cpg);
   const y = d3
     .scaleLinear()
-    .domain([1.35, 0.6])
+    .domain([cpgMin - (cpgMax - cpgMin)*0.20, cpgMax + (cpgMax-cpgMin)*0.15])
     .range([MARGIN.top, MARGIN.top + height]);
   svg
     .select("#y")
