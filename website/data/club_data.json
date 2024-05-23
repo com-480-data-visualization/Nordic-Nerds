@@ -9,8 +9,8 @@
     }
   },
   "AC Milan":{
-    "lat": 45.47838841030036,
-    "long": 10.4,
+    "lat": 45.97838841030036,
+    "long": 11.8,
     "image": {
       "src": "images/clubs/ac_milan.svg",
       "width": 361,
@@ -46,7 +46,7 @@
   },
   "FC Internazionale":{
     "lat": 45.47838841030036,
-    "long": 8,
+    "long": 9.5,
     "image": {
       "src": "images/clubs/fc_internazionale_milano.svg",
       "width": 300,
@@ -90,8 +90,8 @@
     }
   },
   "Juventus FC":{
-    "lat": 47.47838841030036,
-    "long": 9.4,
+    "lat": 45.07838841030036,
+    "long": 7.4,
     "image": {
       "src": "images/clubs/juventus_fc.svg",
       "width": 162.7, 

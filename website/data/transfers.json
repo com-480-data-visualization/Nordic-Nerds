@@ -167,26 +167,6 @@
         "season": "2010/2011"
       },
       {
-        "club_name": "FC Barcelona",
-        "age": 29.0,
-        "position": "Centre-Forward",
-        "transfer_period": "Summer",
-        "fee_cleaned": 0.0,
-        "league_name": "Primera Division",
-        "year": 2011,
-        "season": "2011/2012"
-      },
-      {
-        "club_name": "AC Milan",
-        "age": 29.0,
-        "position": "Centre-Forward",
-        "transfer_period": "Summer",
-        "fee_cleaned": 24.0,
-        "league_name": "Serie A",
-        "year": 2011,
-        "season": "2011/2012"
-      },
-      {
         "club_name": "Paris Saint-Germain",
         "age": 30.0,
         "position": "Centre-Forward",
@@ -217,7 +197,7 @@
         "season": "2019/2020"
       }
     ],
-    "metadata": { "start": 2001, "end": 2019 }
+    "metadata": { "start": 2001, "end": 2023 }
   },
   "Luis Su\u00e1rez": {
     "data": [
