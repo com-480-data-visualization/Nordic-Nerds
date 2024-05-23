@@ -26,7 +26,6 @@ body {
   margin: 0 5%;
   text-align: center;
   font-style: italic;
-  font-weight: 300;
 }
 
 #viz {
@@ -86,4 +85,22 @@ body {
 #sidebar-club-image {
   width: 35%;
   margin: auto;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row; 
+}
+
+.footer-content span {
+  text-transform: capitalize;
 }
