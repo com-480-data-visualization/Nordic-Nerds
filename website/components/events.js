@@ -33,7 +33,7 @@ export const draw = (selectedYear, selectedPlayer, selectedClub, selectedEvents,
   }
   const data = filterData(selectedYear, selectedPlayer, selectedClub, eventsData);
   const nGoals = data.filter((datum) => datum.is_goal).length;
-  updateText(`${selectedPlayer.name} scored ${nGoals} goals in ${data.length - nGoals} attempts for ${selectedClub} in ${selectedYear}!`);
+  updateText(`${selectedPlayer.name} scored ${nGoals} goals in ${data.length + nGoals} attempts for ${selectedClub} in ${selectedYear}!`);
   resizeFieldLines();
   drawEventButtons(selectedEvents, setSelectedEvents);
   drawEventHeatmap(filterEvents(selectedEvents, data));
