@@ -77,6 +77,8 @@ const redraw = () => {
   players.draw(
     playerData,
     selectedPlayer,
+    clubData,
+    selectedClub,
     hoveredPlayer,
     setSelectedPlayer,
     setHoveredPlayer

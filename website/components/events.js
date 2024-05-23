@@ -35,7 +35,7 @@ export const draw = (selectedYear, selectedPlayer, selectedClub, selectedEvents,
   }
   const data = filterData(selectedYear, selectedPlayer, selectedClub, eventsData);
   const nGoals = data.filter((datum) => datum.is_goal).length;
-  updateText(`${selectedPlayer.name} scored ${nGoals} goals in ${data.length - nGoals} attempts for ${selectedClub} in ${selectedYear}!`);
+  updateText(`${selectedPlayer.name} scored ${nGoals} goals in ${data.length + nGoals} attempts for ${selectedClub} in ${selectedYear}!`);
   resizeFieldLines();
   drawEventButtons(selectedEvents, setSelectedEvents, selectedPlayer);
   drawEventHeatmap(partitionEvents(data), selectedEvents);
@@ -63,9 +63,6 @@ function filterData(selectedYear, selectedPlayer, selectedClub, eventsData) {
     })
     .filter((d) => {
       return selectedPlayer == null ? true : d.player == selectedPlayer.name;
-    })
-    .filter((d) => {
-      return selectedClub == null ? true : d.event_team == selectedClub;
     });
   return data;
 }

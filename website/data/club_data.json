@@ -106,6 +106,15 @@
       "width": 306, 
       "height": 308
     }
+  },
+  "FC Red Bull Salzburg": {
+    "lat": 47.801768105387794,
+    "long": 13.047305254975456,
+    "image": {
+      "src": "images/clubs/fc_red_bull_salzburg.svg",
+      "width": 306,
+      "height": 308
+    }
   }
 
 }
