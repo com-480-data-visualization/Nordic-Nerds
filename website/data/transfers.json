@@ -82,6 +82,16 @@
   "Erling Haaland": {
     "data": [
       {
+        "club_name": "FC Red Bull Salzburg",
+        "age": 18.0,
+        "position": "Centre-Forward",
+        "transfer_period": "Winter",
+        "fee_cleaned": 20.0,
+        "league_name": "Austria Bundesliga",
+        "year": 2018,
+        "season": "2018/2019"
+      },
+      {
         "club_name": "Borussia Dortmund",
         "age": 19.0,
         "position": "Centre-Forward",
@@ -102,7 +112,7 @@
         "season": "2022/2023"
       }
     ],
-    "metadata": { "start": 2019, "end": 2022 }
+    "metadata": { "start": 2018, "end": 2022 }
   },
   "Zlatan Ibrahimovic": {
     "data": [
