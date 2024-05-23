@@ -6,7 +6,153 @@
 | Nils Holger Anders Johansson   | 376469 |
 | Arran Øystein Kostveit Gabriel | 375923 |
 
-[Milestone 1](#milestone-1) • [Milestone 2](#milestone-2) • [Milestone 3](#milestone-3)
+[Milestone 3](#milestone-3) • [Milestone 2](#milestone-2) • [Milestone 1](#milestone-1)
+
+## Milestone 3
+
+_(31st May, 5pm)_
+
+[Process book](process_book.pdf)
+
+[Screen cast]()
+
+### How to use the website
+
+Access the website hosted on GitHub [here](https://com-480-data-visualization.github.io/Nordic-Nerds/).
+
+There are essentially three visualizations on the website that can be controlled in different ways:
+
+- __Player career paths__. This visualization can be controlled by the year slider and player icons. If no player icon
+is selected then the map displays where all players were at the given year. If a player icon on the map or from the 
+player icon list on the right side is selected then all transfers up to the selected year is displayed for that player.
+
+- __Attempts and goals__. This visualization requires a player icon to be selected. Then the user can choose for which 
+year to display either goals, attempts or both simultaneously. The two buttons below the football pitch allows the user
+choose which type of game events to display.
+
+- __Club performance__. The club performance visualization required a player icon to be selected. The visualization is
+displaying how many goals scored contrasted to goals conceded on average for the club when the selected player was 
+there, before the player was playing there and after the player was playing there. 
+
+## Milestone 2
+
+_(26th April, 5pm)_
+
+### Sketches of initial visualization ideas
+
+Here the key visualizations of the project are briefly explained with simple sketches to give an impression of the final
+result. A link to the latest update of the website is provided in the end of this section.
+
+#### 1: Player / Club - map
+
+The first and most important visualization of the project is the _Player / Club - map_ visualization. This interactive
+visualization controls the other visualizations on the website, and it is important that we succeed with a clear and easy
+to use interaction. In the default view where no player is selected the map displays the players at their current club. When a player is selected arrows show the player's journey through the world of football. A slider (of years) on the
+left side can be interacted with to "drag" the player through his career in the map. This
+slider will stay on the left of the screen when scrolling on the website to control the other visualizations for the
+player as well. Selecting a club badge in the map will set the slider to year the player arrived at the club. 
+The following visualizations will then be related to the players impact at this particular club.
+
+![Map sketch](sketches/map_sketch.png)
+
+#### 2: Match event heatmap
+
+The _Match event heatmap_ visualization is a visualization displaying the the playstyle of the selected team during the players stay at the club. A heatmap will show where the team scored its goals, took shots, and possibly more events. Again, the year silder controls which club will be paired with the player for this visualization. This visualization is tightly
+coupled with the first and will let the website visitor delve into the aspects of a players career visually through
+data.
+
+![Field sketch](sketches/events_sketch.png)
+
+#### 3: Club impact
+
+The third and last visualization that will be included in the minimal viable product of the website is the _Club impact_ visualization. This visualization is only displayed when a player and a club/year is selected. The idea of this
+visualization is to compare the clubs perfomance, before, during and after player stays. Our first attempt will test out a scatterplot with goals per game, and goals conceded per game on the axes, and points per game on a color scale. The points will be labeled with the period, e.g. _Ronaldo's first stay at Manchester United_.
+
+![Club data sketch](sketches/club_progress_sketch.png)
+
+The latest version of our visualization can be found at the
+following [link](https://com-480-data-visualization.github.io/Nordic-Nerds/), this draft is updated continuously as we
+progress towards the end goal.
+
+### Tools
+
+As prescribed by the course we will be building the website using a stack consisting of the core web development tools 
+of HTML, CSS and JavaScript. The visualizations themselves will be created with _D3.js_, allowing us to create
+a dynamic and data-driven document.
+
+Additionally we are using python and jupyter notebooks to analyze and shape the data to fit our final needs.
+
+We will use ideas and concepts from all the lectures of the course but some are more important than others. A list of
+the most important lectures we will take inspiration from are:
+
+- Week 4 - 5 for the interactive data visualizations using _D3.js_ and data manipulation. The datasets we will use are fairly well-structured but we need to
+  extract the data of interest.
+
+- Week 7 for the map visualization. At the core of our idea is one geographical map of Europe with
+  interactions and a football pitch that will a coordinate map to display where events have happened.
+
+- Week 10 for the player paths in the map visualization. We model this as a directed graph.
+
+### Implementation plan
+
+We have tried to set a strategy for the pieces to implement to reach our minimal viable product (MVP). As with all
+software development we will probably encounter unexpected problems that will force us to reconsider the plan so we have
+tried to keep the plan on a relatively high level. Some parts of the project are dependent on each other but many of the
+bullet points can be done in parallel.
+
+#### Data
+
+Carefully selecting five interesting football players that have sufficient data in all the datasets and then extracting
+that data into smaller datasets.
+
+#### Image graphics
+
+- Find or create a good-looking map including spatial references including the cities of the clubs that the selected
+  players have played for.
+
+- Pictures of the selected players.
+
+- Logos for the clubs that the players have played for.
+
+- Football pitch including spatial references that can be mapped to the football game events.
+
+- Table to show club statistics for the _club timeline_ visualization.
+
+#### Implementation
+
+- _Player / Club - map_
+
+  - Creating the layout of the graphics.
+
+  - First interactive components with arrows getting highlighted when a player is selected.
+
+  - More interactive components as small player icons move on the map when a slider with years is shifted.
+
+- _Match event heatmap_
+
+  - Layout of the football pitch graphic.
+
+  - Interaction that if a specific event is selected a heatmap of location of the event is displayed on the pitch.
+
+  - Player general statistics.
+
+- _Club timeline_
+  - Interaction that when a club for a selected player is clicked a fact table describing the club before, during and
+    after the player was there is displayed.
+
+#### Extra ideas
+
+There are many improvements to the MVP as well as new concepts that we will add to the website if we succeed well with
+the core project. As we get started with the actual implementation and get to try our ideas hands on we expect to get
+even more ideas of improvements that might be more suitable than the ones listed below.
+
+- When a player is selected in the _player / club - map_ the map zooms in to only display the relevant clubs for that
+  player.
+- Transfer fees added to the arrows in some visually appealing way, e.g. arrows scale with amount.
+- A completely new visualization displaying transfer fee compared to events produced during the time in the club for a
+  selected player. E.g. how much each goal cost or how many yellow cards produced for a given amount.
+- Another new visualization exploring the match events on club level.
+- Instead of having five players pre-defined the user can pick any players from the dataset for the comparisons.
 
 ## Milestone 1
 
@@ -147,129 +293,3 @@ The inspiration we have taken is both from geographical data visualizations with
 and entertaining to view and very specific, deep diving visualizations like the Beatles song example showcased in class.
 
 None of the team's participants have used the data before in any class or have some prior experiences with it.
-
-## Milestone 2
-
-_(26th April, 5pm)_
-
-### Sketches of initial visualization ideas
-
-Here the key visualizations of the project are briefly explained with simple sketches to give an impression of the final
-result. A link to the latest update of the website is provided in the end of this section.
-
-#### 1: Player / Club - map
-
-The first and most important visualization of the project is the _Player / Club - map_ visualization. This interactive
-visualization controls the other visualizations on the website, and it is important that we succeed with a clear and easy
-to use interaction. In the default view where no player is selected the map displays the players at their current club. When a player is selected arrows show the player's journey through the world of football. A slider (of years) on the
-left side can be interacted with to "drag" the player through his career in the map. This
-slider will stay on the left of the screen when scrolling on the website to control the other visualizations for the
-player as well. Selecting a club badge in the map will set the slider to year the player arrived at the club. 
-The following visualizations will then be related to the players impact at this particular club.
-
-![Map sketch](sketches/map_sketch.png)
-
-#### 2: Match event heatmap
-
-The _Match event heatmap_ visualization is a visualization displaying the the playstyle of the selected team during the players stay at the club. A heatmap will show where the team scored its goals, took shots, and possibly more events. Again, the year silder controls which club will be paired with the player for this visualization. This visualization is tightly
-coupled with the first and will let the website visitor delve into the aspects of a players career visually through
-data.
-
-![Field sketch](sketches/events_sketch.png)
-
-#### 3: Club impact
-
-The third and last visualization that will be included in the minimal viable product of the website is the _Club impact_ visualization. This visualization is only displayed when a player and a club/year is selected. The idea of this
-visualization is to compare the clubs perfomance, before, during and after player stays. Our first attempt will test out a scatterplot with goals per game, and goals conceded per game on the axes, and points per game on a color scale. The points will be labeled with the period, e.g. _Ronaldo's first stay at Manchester United_.
-
-![Club data sketch](sketches/club_progress_sketch.png)
-
-The latest version of our visualization can be found at the
-following [link](https://com-480-data-visualization.github.io/Nordic-Nerds/), this draft is updated continuously as we
-progress towards the end goal.
-
-### Tools
-
-As prescribed by the course we will be building the website using a stack consisting of the core web development tools 
-of HTML, CSS and JavaScript. The visualizations themselves will be created with _D3.js_, allowing us to create
-a dynamic and data-driven document.
-
-Additionally we are using python and jupyter notebooks to analyze and shape the data to fit our final needs.
-
-We will use ideas and concepts from all the lectures of the course but some are more important than others. A list of
-the most important lectures we will take inspiration from are:
-
-- Week 4 - 5 for the interactive data visualizations using _D3.js_ and data manipulation. The datasets we will use are fairly well-structured but we need to
-  extract the data of interest.
-
-- Week 7 for the map visualization. At the core of our idea is one geographical map of Europe with
-  interactions and a football pitch that will a coordinate map to display where events have happened.
-
-- Week 10 for the player paths in the map visualization. We model this as a directed graph.
-
-### Implementation plan
-
-We have tried to set a strategy for the pieces to implement to reach our minimal viable product (MVP). As with all
-software development we will probably encounter unexpected problems that will force us to reconsider the plan so we have
-tried to keep the plan on a relatively high level. Some parts of the project are dependent on each other but many of the
-bullet points can be done in parallel.
-
-#### Data
-
-Carefully selecting five interesting football players that have sufficient data in all the datasets and then extracting
-that data into smaller datasets.
-
-#### Image graphics
-
-- Find or create a good-looking map including spatial references including the cities of the clubs that the selected
-  players have played for.
-
-- Pictures of the selected players.
-
-- Logos for the clubs that the players have played for.
-
-- Football pitch including spatial references that can be mapped to the football game events.
-
-- Table to show club statistics for the _club timeline_ visualization.
-
-#### Implementation
-
-- _Player / Club - map_
-
-  - Creating the layout of the graphics.
-
-  - First interactive components with arrows getting highlighted when a player is selected.
-
-  - More interactive components as small player icons move on the map when a slider with years is shifted.
-
-- _Match event heatmap_
-
-  - Layout of the football pitch graphic.
-
-  - Interaction that if a specific event is selected a heatmap of location of the event is displayed on the pitch.
-
-  - Player general statistics.
-
-- _Club timeline_
-  - Interaction that when a club for a selected player is clicked a fact table describing the club before, during and
-    after the player was there is displayed.
-
-#### Extra ideas
-
-There are many improvements to the MVP as well as new concepts that we will add to the website if we succeed well with
-the core project. As we get started with the actual implementation and get to try our ideas hands on we expect to get
-even more ideas of improvements that might be more suitable than the ones listed below.
-
-- When a player is selected in the _player / club - map_ the map zooms in to only display the relevant clubs for that
-  player.
-- Transfer fees added to the arrows in some visually appealing way, e.g. arrows scale with amount.
-- A completely new visualization displaying transfer fee compared to events produced during the time in the club for a
-  selected player. E.g. how much each goal cost or how many yellow cards produced for a given amount.
-- Another new visualization exploring the match events on club level.
-- Instead of having five players pre-defined the user can pick any players from the dataset for the comparisons.
-
-## Milestone 3
-
-_(31st May, 5pm)_
-
-**80% of the final grade**
