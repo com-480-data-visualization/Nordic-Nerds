@@ -125,7 +125,6 @@ const redraw = (hover) => {
       setSelectedEvents
     );
     club.draw(
-      clubData,
       transferData,
       selectedPlayer,
       selectedClub,

@@ -9,6 +9,9 @@
 body {
   font-family: sans-serif;
   margin: 0;
+  border-image: linear-gradient(var(--bg) 5%, var(--bg), var(--bg-dark)) 30;
+  border-width: 15px;
+  border-style: solid;
 }
 
 #title {

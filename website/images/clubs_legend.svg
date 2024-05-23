@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="85mm"
-   height="125mm"
-   viewBox="0 0 85 125"
+   width="84.068253mm"
+   height="75mm"
+   viewBox="0 0 84.068252 74.999998"
    version="1.1"
    id="svg1"
    sodipodi:docname="clubs_legend.svg"
@@ -24,15 +24,33 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="1.6851541"
-     inkscape:cx="142.71692"
-     inkscape:cy="199.98171"
+     inkscape:zoom="1.5487042"
+     inkscape:cx="-27.442297"
+     inkscape:cy="255.69764"
      inkscape:window-width="1800"
      inkscape:window-height="1097"
      inkscape:window-x="0"
      inkscape:window-y="44"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1"
+     showgrid="true">
+    <inkscape:grid
+       id="grid10"
+       units="mm"
+       originx="0"
+       originy="0"
+       spacingx="0.99999997"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
   <defs
      id="defs1">
     <pattern
@@ -40,7 +58,7 @@
        xlink:href="#pattern24"
        preserveAspectRatio="xMidYMid"
        id="pattern25"
-       patternTransform="matrix(0.35355339,0.35355339,-0.35355339,0.35355339,0,0)"
+       patternTransform="matrix(0.35355339,0.35355339,-0.35355339,0.35355339,2.1276512,1.2200326e-7)"
        x="0"
        y="0" />
     <pattern
@@ -56,20 +74,19 @@
        inkscape:isstock="true"
        inkscape:label="Stripes 02 (2:3)">
       <rect
-   style="stroke:none"
-   x="0"
-   y="-0.5"
-   width="1"
-   height="2"
-   id="rect23" />
-
+         style="stroke:none"
+         x="0"
+         y="-0.5"
+         width="1"
+         height="2"
+         id="rect23" />
     </pattern>
     <pattern
        inkscape:collect="always"
        xlink:href="#Strips1_1.5"
        preserveAspectRatio="xMidYMid"
        id="pattern21"
-       patternTransform="matrix(0.35355339,0.35355339,-0.35355339,0.35355339,0,0)"
+       patternTransform="matrix(0.35355339,0.35355339,-0.35355339,0.35355339,2.1276512,-3.548339e-7)"
        x="0"
        y="0" />
     <pattern
@@ -85,13 +102,12 @@
        inkscape:isstock="true"
        inkscape:label="Stripes 02 (2:3)">
       <rect
-   style="stroke:none"
-   x="0"
-   y="-0.5"
-   width="1"
-   height="2"
-   id="rect140" />
-
+         style="stroke:none"
+         x="0"
+         y="-0.5"
+         width="1"
+         height="2"
+         id="rect140" />
     </pattern>
     <linearGradient
        id="linearGradient7">
@@ -112,96 +128,115 @@
        x2="15"
        y2="120"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1,0,0,0.79364612,0,10.317694)" />
+       gradientTransform="matrix(-0.00437871,-0.99999089,0.80589734,-0.00335422,-24.757901,77.580057)" />
   </defs>
   <g
-     id="layer1">
+     id="layer1"
+     transform="translate(-1.8841007)">
     <path
-       style="fill:#ffffff;stroke-width:0.134258"
+       style="fill:#ffffff;stroke-width:0.110599"
        id="rect3"
        width="210"
        height="171.82997"
        x="0"
        y="0"
        ry="0.45526445"
-       d="M 2.2403943,0 H 83.701657 c 0.09839,0 0.277126,0.00396039 0.32812,0.13739362 0.03,0.0785025 0.02817,0.29630218 0.02817,0.46175155 V 112.46821 c 0,0.16545 -0.0023,0.46602 -0.0817,0.55177 -0.02778,0.03 -0.06084,0.0474 -0.09645,0.0474 H 2.0622475 c -0.098694,-2e-5 -0.1781468,-0.13363 -0.1781468,-0.29959 V 0.29957259 c 0,-0.0598501 0.010332,-0.1154926 0.028174,-0.1621788 C 1.9632684,0.00396042 2.1420065,0 2.2403943,0 Z"
+       d="M 2.2486081,0 H 85.587824 c 0.100659,0 0.283515,0.00262701 0.335685,0.09113611 0.03069,0.05207238 0.02882,0.19654355 0.02882,0.30628963 V 74.602558 c 0,0.109746 -0.0024,0.309121 -0.08358,0.366 C 85.840324,74.988458 85.806502,75 85.770071,75 H 2.0663544 C 1.9653852,74.999987 1.8841007,74.91136 1.8841007,74.801275 V 0.19871288 c 0,-0.0396999 0.01057,-0.0766087 0.028823,-0.10757665 C 1.9650935,0.00262703 2.1479521,0 2.2486081,0 Z"
        inkscape:export-filename="clubs_legend.svg"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <rect
-       style="fill:url(#pattern25);stroke-width:0.264583;stroke:#000000;stroke-opacity:1;fill-opacity:1"
+       style="fill:url(#pattern25);fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
        id="rect4"
        width="10"
        height="9.999999"
-       x="10"
+       x="12.127651"
        y="30.000002"
        ry="0.45526445" />
     <text
        xml:space="preserve"
        style="font-size:6.35px;fill:#000000;stroke-width:0.264583"
-       x="25"
+       x="26.366734"
        y="16.773533"
        id="text4"><tspan
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
-         x="25"
+         x="26.366734"
          y="16.773533"
          id="tspan5">With player</tspan></text>
     <ellipse
-       style="fill:url(#pattern21);stroke-width:0.264583;fill-opacity:1;stroke:#000000;stroke-opacity:1"
+       style="fill:url(#pattern21);fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-opacity:1"
        id="path6"
-       cx="15"
+       cx="17.127651"
        cy="14.999998"
        rx="5"
        ry="4.9999995" />
     <text
        xml:space="preserve"
        style="font-size:6.35px;fill:#000000;stroke-width:0.264583"
-       x="25"
+       x="26.195892"
        y="36.773537"
        id="text4-5"><tspan
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';stroke-width:0.264583"
-         x="25"
+         x="26.195892"
          y="36.773537"
          id="tspan5-8">Without player</tspan></text>
     <path
-       style="fill:url(#linearGradient8);stroke-width:0.203281"
+       style="fill:url(#linearGradient8);stroke-width:0.204845"
        id="rect6"
        width="5"
        height="70"
        x="12.5"
        y="50"
-       d="m 15,50 c 1.385,0 2.5,0.884915 2.5,1.984115 v 51.586995 c 0,1.0992 -1.115,1.98412 -2.5,1.98412 -1.385,0 -2.5,-0.88492 -2.5,-1.98412 V 51.984115 C 12.5,50.884915 13.615,50 15,50 Z"
+       d="m 15.471285,62.412482 c -0.0061,-1.384987 0.887629,-2.503716 2.003796,-2.508362 l 52.383323,-0.218025 c 1.116163,-0.0047 2.019631,1.106604 2.025694,2.491593 0.0062,1.384986 -0.887638,2.503716 -2.003801,2.508362 l -52.383322,0.218025 c -1.116168,0.0047 -2.019626,-1.106604 -2.02569,-2.491593 z"
        ry="2.5" />
     <text
        xml:space="preserve"
        style="font-size:6.35px;fill:#2b0000;fill-opacity:1;stroke-width:0.264583"
-       x="24.842991"
-       y="74.504707"
+       x="18.074842"
+       y="54.515491"
        id="text8"><tspan
          sodipodi:role="line"
          id="tspan1"
-         x="24.842991"
-         y="74.504707"><tspan
+         x="18.074842"
+         y="54.515491"><tspan
            id="tspan8"
            style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#2b0000;stroke-width:0.264583"
-           x="24.842991"
-           y="74.504707">Points per game</tspan></tspan><tspan
+           x="18.074842"
+           y="54.515491">Points per game</tspan></tspan><tspan
          sodipodi:role="line"
          id="tspan2"
-         x="24.842991"
-         y="82.442207" /><tspan
+         x="18.074842"
+         y="62.452991" /><tspan
          sodipodi:role="line"
-         x="24.842991"
-         y="74.504707"
-         id="tspan4"><tspan
-           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#2b0000;stroke-width:0.264583"
-           x="24.842991"
-           y="74.504707"
-           id="tspan6">                       </tspan></tspan><tspan
-         sodipodi:role="line"
-         x="24.842991"
-         y="82.442207"
+         x="18.074842"
+         y="54.515491"
          id="tspan7"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'">(darker = more)</tspan></text>
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'"><tspan
+           style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#2b0000;stroke-width:0.264583"
+           x="18.074842"
+           y="54.515491"
+           id="tspan6">                       </tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#2b0000;stroke:#000000;stroke-width:0.264583"
+       x="9.9582748"
+       y="64.60347"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#000000;stroke:none;stroke-width:0.264583"
+         x="9.9582748"
+         y="64.60347">3</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.35px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#000000;stroke:none;stroke-width:0.264583"
+       x="73.090393"
+       y="64.601921"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         style="stroke-width:0.264583"
+         x="73.090393"
+         y="64.601921">0</tspan></text>
   </g>
 </svg>

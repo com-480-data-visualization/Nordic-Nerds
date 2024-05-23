@@ -22,31 +22,56 @@ const getSize = () => {
 
 const resizeFieldLines = () => {
   const { width, height } = getSize();
-  fieldLines.attr("width", width).attr("height", height).attr("x", MARGIN.horizontal).attr("y", MARGIN.vertical);
+  fieldLines
+    .attr("width", width)
+    .attr("height", height)
+    .attr("x", MARGIN.horizontal)
+    .attr("y", MARGIN.vertical);
 };
 
-export const draw = (selectedYear, selectedPlayer, selectedClub, selectedEvents, eventsData, setSelectedEvents) => {
+export const draw = (
+  selectedYear,
+  selectedPlayer,
+  selectedClub,
+  selectedEvents,
+  eventsData,
+  setSelectedEvents
+) => {
   if (!selectedPlayer) {
-    updateText("Select a player to see how his goalscoring ability has evolved over time");
+    updateText(
+      "Select a player to see how his goalscoring ability has evolved over time"
+    );
     resizeFieldLines();
     drawEventButtons(selectedEvents, setSelectedEvents, selectedPlayer);
     drawEventHeatmap({ goals: [], misses: [] }, selectedEvents);
     return;
   }
-  const data = filterData(selectedYear, selectedPlayer, selectedClub, eventsData);
+  const data = filterData(
+    selectedYear,
+    selectedPlayer,
+    selectedClub,
+    eventsData
+  );
   const nGoals = data.filter((datum) => datum.is_goal).length;
-  updateText(`${selectedPlayer.name} scored ${nGoals} goals in ${data.length + nGoals} attempts for ${selectedClub} in ${selectedYear}!`);
+  updateText(
+    `${selectedPlayer.name} scored ${nGoals} goals in ${
+      data.length + nGoals
+    } attempts for ${selectedClub} in ${selectedYear}!`
+  );
   resizeFieldLines();
   drawEventButtons(selectedEvents, setSelectedEvents, selectedPlayer);
   drawEventHeatmap(partitionEvents(data), selectedEvents);
 };
 
 const updateText = (text) => {
-  const textElem = document.getElementById("events-description");
-  textElem.innerHTML = text;
+  d3.select("#events-description").style("font-style", "italic").text(text);
 };
 
-const drawEventButtons = (selectedEvents, setSelectedEvents, selectedPlayer) => {
+const drawEventButtons = (
+  selectedEvents,
+  setSelectedEvents,
+  selectedPlayer
+) => {
   buttons.classed("event-button-disabled", !selectedPlayer);
   buttons.on("click", (event) => {
     let buttonId = event.target.id;
@@ -83,9 +108,13 @@ const drawEventHeatmap = (data, selectedEvents) => {
   const joinedData = goalData.concat(missData);
 
   // Add X axis
-  const x = d3.scaleLinear(d3.extent(joinedData, (d) => d.x)).range([MARGIN.horizontal, width - MARGIN.horizontal]);
+  const x = d3
+    .scaleLinear(d3.extent(joinedData, (d) => d.x))
+    .range([MARGIN.horizontal, width - MARGIN.horizontal]);
 
-  const y = d3.scaleLinear(d3.extent(joinedData, (d) => d.y)).range([height - MARGIN.vertical, MARGIN.vertical]);
+  const y = d3
+    .scaleLinear(d3.extent(joinedData, (d) => d.y))
+    .range([height - MARGIN.vertical, MARGIN.vertical]);
 
   // Prepare a color palette
   const goalColor = d3.scaleLinear([0.1, 1], ["blue", "#69b3a2"]);

@@ -17,7 +17,7 @@ const DOT_SIZE = 500;
 let prevSelectedPlayer = null;
 let prevSelectedClub = null;
 
-export const draw = (clubData, transferData, selectedPlayer, selectedClub) => {
+export const draw = (transferData, selectedPlayer, selectedClub) => {
   console.log("Drawing club data");
   const description = d3
     .select("#club-data-description")
