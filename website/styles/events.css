@@ -6,7 +6,7 @@
 }
 
 .event-button {
-  background-color: var(--bg);
+  background-color: gray;
   border: var(--accent-variant);
   color: white;
   padding: 15px 32px;
@@ -19,10 +19,10 @@
   cursor: pointer;
 }
 
-.event-button:hover {
-  background-color: #45a049;
-}
-
 .event-button-selected {
   background-color: #008CBA; /* Blue */
+}
+
+.event-button-disabled {
+  background-color: lightgray; 
 }
