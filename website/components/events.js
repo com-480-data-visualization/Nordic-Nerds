@@ -64,9 +64,6 @@ function filterData(selectedYear, selectedPlayer, selectedClub, eventsData) {
     })
     .filter((d) => {
       return selectedPlayer == null ? true : d.player == selectedPlayer.name;
-    })
-    .filter((d) => {
-      return selectedClub == null ? true : d.event_team == selectedClub;
     });
   return data;
 }
