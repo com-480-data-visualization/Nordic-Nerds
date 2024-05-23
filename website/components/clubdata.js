@@ -36,14 +36,12 @@ export const draw = (clubData, transferData, selectedPlayer, selectedClub) => {
       "Select a player and a club to see the player's impact on the clubs performance."
     );
     // Clear all elements
-    //svg.select("#trans").selectAll("*").remove();
     svg.select("#x").selectAll("g, path").remove();
     svg.select("#x").selectAll("text").text("");
     svg.select("#y").selectAll("g, path").remove();
     svg.select("#y").selectAll("text").text("");
     svg.select("#line").selectAll("*").remove();
     svg.select("#dots").selectAll("*").remove();
-    svg.select("#badge").attr("href", "");
     svg.select("#plot-title").text("");
     return;
   }
@@ -192,17 +190,6 @@ export const draw = (clubData, transferData, selectedPlayer, selectedClub) => {
   } else {
     timeline.attr("stroke-dasharray", `${l},${l}`);
   }
-
-  const clubImage = clubData[selectedClub].image;
-
-  svg
-    .select("#badge")
-    .attr("href", clubImage.src)
-    .attr("x", FULL_WIDTH - BADGE_SIZE - BADGE_PADDING)
-    .attr("y", BADGE_PADDING)
-    .attr("opacity", 0.6)
-    .attr("width", clubImage.width >= clubImage.height ? BADGE_SIZE : null)
-    .attr("height", clubImage.width < clubImage.height ? BADGE_SIZE : null);
 
   svg
     .select("#plot-title")
