@@ -12,27 +12,32 @@
 
 _(31st May, 5pm)_
 
-[Process book](process_book.pdf)
+Deliverables:
 
-[Screen cast]()
+- [Screencast](https://drive.google.com/file/d/1UvpRft9mzs2bHcYDQyWatKbZhdGVLGio/view?usp=sharing)
+- [Process-book](process_book.pdf)
 
 ### How to use the website
 
-Access the website hosted on GitHub [here](https://com-480-data-visualization.github.io/Nordic-Nerds/).
+Access the website hosted on GitHub-pages [here](https://com-480-data-visualization.github.io/Nordic-Nerds/).
 
-There are essentially three visualizations on the website that can be controlled in different ways:
+> Please note we have developed the website in google chrome, and we make no guarantees that it works correctly in other browsers!
 
-- __Player career paths__. This visualization can be controlled by the year slider and player icons. If no player icon
-is selected then the map displays where all players were at the given year. If a player icon on the map or from the 
-player icon list on the right side is selected then all transfers up to the selected year is displayed for that player.
+It is built using vanilla javascript + D3. The project is separated into modules to make development easier. Code pertaining to each component can be found in the `website/components/` directory. The data is located in `website/data/`, and image resources in `website/images/`. The main script `website/main.js` sets up the visualizations, structured by `website/index.html`.
 
-- __Attempts and goals__. This visualization requires a player icon to be selected. Then the user can choose for which 
-year to display either goals, attempts or both simultaneously. The two buttons below the football pitch allows the user
-choose which type of game events to display.
+There are three visualizations on the website that can be controlled in different ways:
 
-- __Club performance__. The club performance visualization required a player icon to be selected. The visualization is
-displaying how many goals scored contrasted to goals conceded on average for the club when the selected player was 
-there, before the player was playing there and after the player was playing there. 
+- **Player career paths**. This visualization can be controlled by the year slider and player icons. If no player icon
+  is selected then the map displays where all players were at the given year. If a player icon on the map or from the
+  player icon list on the right side is selected then all transfers up to the selected year is displayed for that player.
+
+- **Attempts and goals**. This visualization requires a player icon to be selected. Then the user can choose for which
+  year to display either goals, attempts or both simultaneously. The two buttons below the football pitch allows the user
+  choose which type of game events to display.
+
+- **Club performance**. The club performance visualization required a player icon to be selected. The visualization is
+  displaying how many goals scored contrasted to goals conceded on average for the club when the selected player was
+  there, before the player was playing there and after the player was playing there.
 
 ## Milestone 2
 
@@ -50,7 +55,7 @@ visualization controls the other visualizations on the website, and it is import
 to use interaction. In the default view where no player is selected the map displays the players at their current club. When a player is selected arrows show the player's journey through the world of football. A slider (of years) on the
 left side can be interacted with to "drag" the player through his career in the map. This
 slider will stay on the left of the screen when scrolling on the website to control the other visualizations for the
-player as well. Selecting a club badge in the map will set the slider to year the player arrived at the club. 
+player as well. Selecting a club badge in the map will set the slider to year the player arrived at the club.
 The following visualizations will then be related to the players impact at this particular club.
 
 ![Map sketch](sketches/map_sketch.png)
@@ -76,7 +81,7 @@ progress towards the end goal.
 
 ### Tools
 
-As prescribed by the course we will be building the website using a stack consisting of the core web development tools 
+As prescribed by the course we will be building the website using a stack consisting of the core web development tools
 of HTML, CSS and JavaScript. The visualizations themselves will be created with _D3.js_, allowing us to create
 a dynamic and data-driven document.
 
