@@ -49,6 +49,8 @@ export const draw = (
 ) => {
   let links = [];
   let clubs = [];
+  let playersAndClubs = {};
+  let clubToPlayers = {};
 
   if (selectedPlayer || hoveredPlayer) {
     const playerTransfers = transferData[
@@ -87,7 +89,7 @@ export const draw = (
         player: player,
       };
     });
-    const clubsWithPlayers = Object.fromEntries(
+    clubToPlayers = Object.fromEntries(
       Object.keys(clubData)
         .map((club) => [
           club,
@@ -97,8 +99,11 @@ export const draw = (
         ])
         .filter((d) => d[1].length > 0)
     );
+    console.log(clubToPlayers);
     links = [];
-    clubs = Object.entries(clubData).filter((d) => clubsWithPlayers[d[0]]);
+    clubs = Object.entries(clubData).filter((d) => clubToPlayers[d[0]]);
+    // playersAndClubs = utils.zip2(playerData, playersClubs).filter(pair => pair[1].club)
+    playersAndClubs = playersClubs.filter(pair => pair.club);
   }
 
   const size = svg.node().getBoundingClientRect().width;
@@ -112,6 +117,9 @@ export const draw = (
 
   drawClubs(
     clubs,
+    clubData,
+    playersAndClubs,
+    clubToPlayers,
     selectedClub,
     hoveredClub,
     setSelectedClub,
@@ -122,18 +130,60 @@ export const draw = (
   drawLinks(links, projection);
 };
 
+const player_x_offset = (index) => {
+  switch (index) {
+    case 0: return -15;
+    case 1: return -30;
+    case 2: return 40;
+    default: return 50;
+  }
+}
+
+const player_y_offset = (index) => {
+  switch (index) {
+    case 0: return -30;
+    case 1: return -15;
+    case 2: return 40;
+    default: return 50;
+  }
+}
+
 const drawClubs = (
+  clubs,
   clubData,
+  playersAndClubs,
+  clubToPlayers,
   selectedClub,
   hoveredClub,
   setSelectedClub,
   setHoveredClub,
   projection
 ) => {
+  console.log(clubToPlayers)
+  svg
+    .select("#players")
+    .selectAll("image")
+    .data(playersAndClubs)
+    .join("image")
+    .attr("href", (d) => d.player.portrait_src)
+    .attr(
+      "x",
+      (d) => projection([clubData[d.club].long, clubData[d.club].lat])[0] - MAP_BADGE_WIDTH / 2 + player_x_offset(clubToPlayers[d.club].findIndex((player) => d.player.name == player.name))
+    )
+    .attr(
+      "y",
+      (d) => projection([clubData[d.club].long, clubData[d.club].lat])[1] - MAP_BADGE_WIDTH / 2 + player_y_offset(clubToPlayers[d.club].findIndex((player) => d.player.name == player.name))
+    )
+    .attr("width", (d) =>
+      40
+    )
+    .attr("height", (d) =>
+      40
+    )
   svg
     .select("#clubs")
     .selectAll("image")
-    .data(clubData)
+    .data(clubs)
     .join("image")
     .attr("href", (d) => d[1].image.src)
     .attr(
