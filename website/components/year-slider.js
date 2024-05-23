@@ -1,5 +1,6 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import * as utils from "../utils.js";
+import { TRANSFER_COLORS } from "./map.js";
 
 let slider = d3.select("#year-slider");
 let labels = d3.select("#year-slider-labels");
@@ -31,7 +32,7 @@ export const setup = (firstYear, lastYear, onChange) => {
 
   labels
     .selectAll("span")
-    .data(utils.range(firstYear, lastYear + 1).reverse())
+    .data(utils.range(firstYear, lastYear + 1))
     .enter()
     .append("span")
     .text((d) => d);
@@ -48,6 +49,21 @@ export const limitYear = (minYear, maxYear) => {
   let oldVal = slider.attr("data-prev-value");
   let newVal = utils.clamp(oldVal, min, max);
   if (newVal != oldVal) changeYear(newVal);
+};
+
+export const setIntervals = (transferYears) => {
+  labels.selectAll("span").style("color", (year) => {
+    if (transferYears != null) {
+      let i = transferYears.findLastIndex(
+        (transferYear) => year >= transferYear
+      );
+      return i >= 0
+        ? TRANSFER_COLORS[i]
+        : TRANSFER_COLORS[transferYears.length];
+    } else {
+      return null;
+    }
+  });
 };
 
 export const setSelectedYear = (year) => changeYear(year);
